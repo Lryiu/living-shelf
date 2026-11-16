@@ -1,0 +1,46 @@
+YAŞAYAN KİTAPLIK · ANA TEMA LİSTESİ
+Etiketler yalnızca bu listeden seçilir. Yeni bir tema gerekirse önce buraya eklenir, sonra kullanılır.
+Tür bildiren etiket kullanılmaz (Roman, Klasik, Kurgu gibi). Her kitaba 3-4 etiket, önem sırasıyla.
+
+İNSAN VE RUH
+Psikoloji, Yalnızlık, Yabancılaşma, Kimlik, Bellek, Travma, Delilik, Takıntı, Arzu, Kıskançlık, İntikam, Suçluluk, Vicdan, Utanç, Melankoli, Umut, Umutsuzluk, Kefaret, Korku, Ölüm, Yas, Kayıp, Çocukluk, Büyüme, Yaşlılık, Beden, Bağımlılık, Pişmanlık, Kayboluş
+
+FELSEFE VE ANLAM
+Varoluşçuluk, Absürd, Nihilizm, Anlam Arayışı, Özgür İrade, Ahlak, İnanç, Kader, Zaman, Hakikat, Akıl, Sanat, Güzellik, İdealizm, Estetik, Etik, Eleştirel Düşünce, Gösterge
+
+TOPLUM VE İKTİDAR
+İktidar, Totalitarizm, Distopya, Özgürlük, Adalet, Sınıf, Yoksulluk, Savaş, Şiddet, Devrim, Siyaset, Sansür, Bürokrasi, Esaret, Irkçılık, Sömürgecilik, Göç, Sürgün, Taşra, Kent, Modernleşme, Eğitim, Gelenek, Toplumsal Bellek, Kadın, Toplumsal Cinsiyet, Toplumsal Baskı, Beden Özerkliği, Kapitalizm, İdeoloji, Gözetim, Emek, Modernite, Tüketim, Biyopolitika
+
+AİLE VE İLİŞKİLER
+Aile, Evlilik, Annelik, Babalık, Kuşak Çatışması, Aşk, Dostluk, İhanet, Sadakat, Yalan, Fedakârlık, Sınırlar, Manipülasyon, Aile Sırları
+
+DOĞA, BİLİM, GELECEK
+Doğa, Deniz, Hayvanlar, Ekoloji, Bilim, Teknoloji, Yapay Zekâ, Uzay, Medya
+
+YAZI VE DİL
+Yazarlık, Dil, Okuma
+
+ATMOSFER VE ÜSLUP (SEYREK KULLAN)
+Grotesk, Kara Mizah, İroni, Gerçeküstücülük, Büyülü Gerçekçilik, Gotik, Masal, Mit
+
+ETİKETLEME AYRIMI — KAYIP / KAYBOLUŞ
+Kayıp: Birini veya bir şeyi yitirme; ayrılık, ölüm, kaybedilen kişi veya değerli bir şeyin yokluğu.
+Kayboluş: Kişinin kendisini, yerini, kimliğini ya da izini yitirmesi; ortadan kaybolma veya kendilik duygusunu yitirme.
+Bu iki etiket birbirinin yerine kullanılmaz.
+
+YENİ TEMALAR — KULLANIM NOTLARI
+Estetik: Sanat deneyimi, algısı, biçimi ve estetik yargının belirgin biçimde incelenmesi.
+Etik: Eylemin gerekçesi, sorumluluk ve ahlaki yargılama üzerine sistematik düşünme; Ahlak etiketiyle otomatik eşanlamlı değildir.
+Kapitalizm: Sermaye, piyasa ve üretim ilişkileri sisteminin merkezî konu olması.
+İdeoloji: İnançların, fikirlerin ve söylemlerin toplumsal/siyasal işlevlerinin belirgin incelenmesi.
+Gözetim: İzleme, disiplin, kontrol ve görünürlük üzerinden kurulan denetim.
+Emek: Çalışma, işgücü, üretim ve çalışma ilişkileri.
+Modernite: Modern yaşama özgü kurum, deneyim ve koşullar; Modernleşme dönüşüm süreci anlamında ayrı kalır.
+Tüketim: Tüketme pratikleri, tüketim kültürü ve tüketimle kurulan kimlik.
+Medya: Kitle iletişimi, medya araçları, dolaşım ve medya eleştirisi.
+Eleştirel Düşünce: Bilgi, toplumsal normlar ve kurumların varsayımlarına yönelik sistematik eleştiri.
+Biyopolitika: Yaşam, nüfus, beden ve sağlık süreçlerinin iktidarca yönetimi.
+Pişmanlık ve Kayboluş zaten listede vardı; yinelenmedi.
+Kayıp / Kayboluş ayrımı yukarıdaki özgün kullanım notlarına göre korunur.
+
+Gösterge: Dilin, imgelerin, nesnelerin ve kültürel sembollerin anlam üretme ve iletme biçimleri. Medya (iletişim ortamı) ve İdeoloji (anlamların toplumsal-siyasal işlevi) ile eşanlamlı değildir.

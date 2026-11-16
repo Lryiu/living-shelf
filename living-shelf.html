@@ -3,7 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yaşayan Kitaplık • Okur Atlası</title>
+<title>Yaşayan Kitaplık (Living Shelf) — Okur Atlası | Lryiu Labs</title>
+<meta name="description" content="Okuduğun kitapları kaydet; yazar ustalık seviyelerini, tema haritanı ve yapay zekâ destekli okur profilini gör. Ücretsiz, kayıt gerektirmez.">
+<meta name="author" content="Gamze Güçkıran Chartrand Cossette">
+<link rel="canonical" href="https://gamzeguckiran.com/living-shelf.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0d1016">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lryiu Labs">
+<meta property="og:url" content="https://gamzeguckiran.com/living-shelf.html">
+<meta property="og:title" content="Yaşayan Kitaplık — Okur Atlası">
+<meta property="og:description" content="Okuma yolculuğunu bir zihin atlasına dönüştüren kişisel kütüphane. Ücretsiz, kayıt gerektirmez.">
+<meta property="og:image" content="https://gamzeguckiran.com/living-shelf-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yaşayan Kitaplık — Okur Atlası">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yaşayan Kitaplık — Okur Atlası">
+<meta name="twitter:description" content="Okuma yolculuğunu bir zihin atlasına dönüştüren kişisel kütüphane.">
+<meta name="twitter:image" content="https://gamzeguckiran.com/living-shelf-og.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "@id": "https://gamzeguckiran.com/living-shelf.html",
+ "url": "https://gamzeguckiran.com/living-shelf.html",
+ "name": "Yaşayan Kitaplık",
+ "alternateName": "Living Shelf",
+ "inLanguage": "tr",
+ "description": "Okuma yolculuğunu canlı bir sinaps haritasına dönüştüren, tarayıcı tabanlı bir kütüphane uygulaması: yazar ustalık seviyeleri, tema bölgeleri, okuma pusulası ve yapay zekâ destekli okur profili.",
+ "applicationCategory": "LifestyleApplication",
+ "operatingSystem": "Web browser",
+ "softwareVersion": "2.2",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "image": "https://gamzeguckiran.com/living-shelf-og.jpg",
+ "sameAs": [
+  "https://github.com/Lryiu/living-shelf"
+ ],
+ "isPartOf": {
+  "@type": "CollectionPage",
+  "@id": "https://gamzeguckiran.com/apps.html",
+  "name": "Lryiu Labs — Apps"
+ },
+ "author": {
+  "@type": "Person",
+  "@id": "https://lryiu.com/#person",
+  "name": "Gamze Güçkıran Chartrand Cossette",
+  "alternateName": "Lryiu",
+  "url": "https://lryiu.com/"
+ }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -105,18 +163,22 @@
   .panel{background:var(--panel);border:1px solid var(--hairline);border-radius:16px;}
   .panel-pad{padding:22px;}
 
-  input[type=text],input[type=url],input[type=password],select,textarea{
+  input[type=text],input[type=url],input[type=password],input[type=search],select,textarea{
     width:100%;background:var(--ink-2);border:1px solid var(--hairline);color:var(--parchment);
     padding:10px 12px;border-radius:10px;font-family:var(--font-body);font-size:14px;outline:none;
     transition:border-color .2s ease;
   }
   input:focus,select:focus,textarea:focus{border-color:var(--brass-dim);}
-  label.field-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment-dim);margin-bottom:6px;display:block;}
+  .field-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--parchment-dim);margin-bottom:6px;display:block;}
 
   /* ---------- Toolbar / shelf ---------- */
   .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:22px;}
   .search-wrap{flex:1;min-width:220px;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--hairline);border-radius:10px;padding:9px 12px;}
   .search-wrap input{border:none;background:transparent;padding:0;}
+  .search-wrap input::-webkit-search-cancel-button{filter:invert(.6);}
+  .toolbar select{width:auto;min-width:180px;flex:none;}
+  input.secret{-webkit-text-security:disc;font-family:var(--font-mono);letter-spacing:.04em;}
+  input:-webkit-autofill{-webkit-box-shadow:0 0 0 40px var(--ink-2) inset;-webkit-text-fill-color:var(--parchment);}
 
   #shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px;}
   .book-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--hairline);background:var(--panel);cursor:pointer;transition:transform .25s ease, border-color .25s ease;}
@@ -124,10 +186,10 @@
   .book-cover{aspect-ratio:2/3;width:100%;background:linear-gradient(160deg,var(--panel-2),var(--ink-2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .book-cover img{width:100%;height:100%;object-fit:cover;}
   .cover-fallback{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--parchment-dim);text-align:center;padding:14px;line-height:1.3;}
-  .status-chip{position:absolute;top:8px;left:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;backdrop-filter:blur(6px);}
-  .status-okundu{background:rgba(124,150,120,.28);color:var(--sage-2);border:1px solid rgba(124,150,120,.4);}
-  .status-okunuyor{background:rgba(201,159,95,.25);color:var(--brass-2);border:1px solid rgba(201,159,95,.4);}
-  .status-yarim{background:rgba(162,81,90,.25);color:var(--wine-2);border:1px solid rgba(162,81,90,.4);}
+  .status-chip{position:absolute;top:8px;left:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;backdrop-filter:blur(6px);background:rgba(13,16,22,.78);box-shadow:0 1px 6px rgba(0,0,0,.35);}
+  .status-okundu{color:var(--sage-2);border:1px solid rgba(124,150,120,.55);}
+  .status-okunuyor{color:var(--brass-2);border:1px solid rgba(201,159,95,.55);}
+  .status-yarim{color:var(--wine-2);border:1px solid rgba(162,81,90,.6);}
   .book-meta{padding:12px 12px 14px;}
   .book-meta .title{font-family:var(--font-display);font-size:14.5px;line-height:1.25;margin:0 0 3px;font-weight:600;}
   .book-meta .author{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em;}
@@ -184,8 +246,82 @@
   .section-title h2{font-size:18px;font-weight:600;margin:0;}
   .section-title .rule{flex:1;height:1px;background:var(--hairline);}
 
+
+  /* ---------- Etiket alanı ---------- */
+  .tag-input{display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:var(--ink-2);border:1px solid var(--hairline);border-radius:10px;padding:7px 8px;min-height:44px;cursor:text;transition:border-color .2s ease;position:relative;}
+  .tag-input:focus-within{border-color:var(--brass-dim);}
+  .tag-input input{flex:1;min-width:140px;border:none!important;background:transparent!important;padding:4px 4px!important;}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11.5px;padding:4px 6px 4px 10px;border-radius:999px;background:rgba(162,81,90,.16);border:1px solid rgba(162,81,90,.42);color:var(--wine-2);}
+  .chip button{border:none;background:transparent;color:inherit;opacity:.65;cursor:pointer;font-size:13px;line-height:1;padding:0 2px;}
+  .chip button:hover{opacity:1;}
+  .chip.flash{animation:chipflash .6s ease;}
+  @keyframes chipflash{0%,100%{transform:none}30%{transform:scale(1.12)}}
+  .ti-wrap{position:relative;}
+  .ti-suggest{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:5;background:var(--panel-2);border:1px solid var(--hairline);border-radius:10px;padding:4px;box-shadow:0 14px 34px rgba(0,0,0,.45);max-height:240px;overflow:auto;}
+  .ti-opt{display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;border:none;background:transparent;color:var(--parchment);font-family:var(--font-body);font-size:14px;padding:8px 10px;border-radius:7px;cursor:pointer;}
+  .ti-opt small{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);}
+  .ti-opt.on,.ti-opt:hover{background:rgba(201,159,95,.12);color:var(--brass-2);}
+  .ti-opt.new{color:var(--parchment-dim);font-style:italic;}
+  .ti-hint{margin-top:8px;font-size:13px;color:var(--parchment-dim);display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+  .ti-hint:empty{display:none;}
+  .ti-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:9px;}
+  .ti-row:empty{display:none;}
+  .ti-row .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:2px;}
+  .pick{font-family:var(--font-mono);font-size:11px;padding:4px 10px;border-radius:999px;border:1px dashed var(--hairline);background:transparent;color:var(--parchment-dim);cursor:pointer;transition:all .15s ease;}
+  .pick:hover{border-style:solid;border-color:var(--wine);color:var(--wine-2);}
+  .pick.g{border-color:rgba(124,150,120,.4);}
+  .pick.g:hover{border-color:var(--sage);color:var(--sage-2);}
+  .pick.solid{border-style:solid;border-color:var(--brass-dim);color:var(--brass-2);}
+  .pick.dict{border-style:solid;border-color:rgba(201,169,110,.28);color:var(--parchment);}
+  .pick.dict:hover{border-color:var(--brass);color:var(--brass-2);}
+  .pick.dict-all{border-style:solid;background:rgba(201,169,110,.12);border-color:var(--brass-dim);color:var(--brass-2);}
+  .dict-note{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);line-height:1.6;margin-top:8px;}
+
+  /* ---------- Etiket yönetimi ---------- */
+  .tm-row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--hairline-soft);}
+  .tm-row .nm{flex:1;min-width:0;font-family:var(--font-display);font-size:15px;}
+  .tm-row .ct{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);white-space:nowrap;}
+  .tm-row input{flex:1;}
+  .tm-dupes{background:rgba(201,159,95,.07);border:1px solid rgba(201,159,95,.25);border-radius:12px;padding:12px 14px;margin-bottom:16px;}
+  .tm-dupes .row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:7px 0;font-size:14px;border-top:1px solid rgba(201,159,95,.12);}
+  .tm-dupes .row:first-of-type{border-top:none;}
+  .tm-dupes .pair{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font-family:var(--font-display);}
+  .tm-dupes .acts{display:flex;gap:6px;}
+  .tm-dupes .row b{font-weight:600;color:var(--brass-2);}
+  .tm-dupes .row s{color:var(--wine-2);text-decoration-color:rgba(198,112,120,.6);}
+
+  /* ---------- Zihin Atlası ---------- */
+  .atlas-sub{color:var(--muted);font-size:13px;line-height:1.6;margin:-6px 0 14px;max-width:720px;}
+  .synapse-holder{position:relative;border-radius:12px;background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,159,95,.035), transparent 70%);}
+  .synapse-holder svg{width:100%;height:auto;display:block;}
+  .synapse-note{font-family:var(--font-mono);font-size:11.5px;color:var(--parchment-dim);min-height:18px;margin-top:8px;}
+  .insights{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .insights span{font-family:var(--font-mono);font-size:11px;color:var(--parchment-dim);border:1px solid var(--hairline);border-radius:999px;padding:6px 12px;}
+  .insights b{color:var(--brass-2);font-weight:500;}
+  .atlas-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);}
+  .link-btn{background:none;border:none;color:var(--muted);font-family:var(--font-mono);font-size:10.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--hairline);padding:0;}
+  .link-btn:hover{color:var(--brass-2);}
+  .mini-select{width:auto!important;padding:5px 8px!important;font-family:var(--font-mono)!important;font-size:11px!important;}
+  .syn-node{cursor:pointer;transition:opacity .35s ease;}
+  .syn-link{transition:stroke-opacity .35s ease;}
+  .tag-poster{padding:4px 0 2px;}
+  .tag-poster .flow{text-align:center;line-height:1.12;}
+  .tag-poster .w{display:inline-block;background:none;border:none;padding:0;margin:3px 11px;cursor:pointer;vertical-align:baseline;transition:filter .25s ease, opacity .25s ease;}
+  .tag-poster .w:focus-visible{outline:1px solid var(--brass-dim);outline-offset:4px;border-radius:4px;}
+  .tag-poster .main{font-family:var(--font-display);font-weight:600;font-style:normal;letter-spacing:-.01em;}
+  .tag-poster .mid{font-family:var(--font-display);font-weight:400;font-style:italic;}
+  .tag-poster .one{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;}
+  .tag-poster .ones{margin-top:16px;padding-top:12px;border-top:1px dashed var(--hairline);text-align:center;line-height:2;}
+  .tag-poster .more{display:block;text-align:center;margin-top:12px;font-family:var(--font-mono);font-size:11px;color:var(--muted);}
+  .poster-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);margin-top:6px;}
+  .poster-legend i{display:inline-block;width:22px;height:6px;border-radius:3px;vertical-align:middle;margin-right:6px;background:linear-gradient(90deg,#e8c07f,#d8cfbd,#8e8679);}
+  .compass-dot{cursor:pointer;transition:opacity .25s ease;}
+  input[type=month]{width:100%;background:var(--ink-2);border:1px solid var(--hairline);color:var(--parchment);padding:9px 12px;border-radius:10px;font-family:var(--font-body);font-size:14px;outline:none;color-scheme:dark;}
+  @media (prefers-reduced-motion: reduce){ .syn-node,.syn-link{transition:none;} }
+
   @media (max-width:640px){
     .field-grid{grid-template-columns:1fr;}
+    .toolbar select{flex:1;min-width:0;}
     .top-inner{padding:14px 16px;}
     main{padding:20px 14px 80px;}
   }
@@ -208,6 +344,8 @@
       <button class="tab-btn" data-tab="impact" onclick="switchTab('impact')">Zihin Atlası</button>
     </nav>
     <div style="display:flex;gap:8px;">
+      <button class="btn ghost small" onclick="openAboutModal()" title="Hakkında">ℹ️ Hakkında</button>
+      <button class="btn ghost small" onclick="openTagManager()">Etiketler</button>
       <button class="btn ghost small" onclick="openSettingsModal()">Ayarlar</button>
       <button class="btn primary small" onclick="openBookModal()">+ Kitap Ekle</button>
     </div>
@@ -221,13 +359,14 @@
     <div class="toolbar">
       <div class="search-wrap">
         <span style="color:var(--muted)">⌕</span>
-        <input type="text" id="shelf-search" oninput="renderShelf()" placeholder="Kitap, yazar veya etiket ara...">
+        <input type="search" id="shelf-search" name="shelf-query" oninput="renderShelf()" placeholder="Kitap, yazar veya etiket ara..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
       </div>
       <select id="shelf-status-filter" onchange="renderShelf()">
         <option value="">Tüm Durumlar</option>
         <option value="okundu">Okundu</option>
         <option value="okunuyor">Okunuyor</option>
         <option value="yarim">Yarım Bırakıldı</option>
+        <option value="notag">Etiketsiz</option>
       </select>
       <select id="shelf-sort" onchange="renderShelf()">
         <option value="new">En Yeni</option>
@@ -239,6 +378,8 @@
     <div id="shelf-empty" class="empty-state" style="display:none;">
       <h3>Raf henüz boş</h3>
       <p>İlk kitabını ekleyerek atlasını çizmeye başla.</p>
+      <p style="margin-top:16px;"><button class="btn small" onclick="startGoodreadsImport()">Goodreads kitaplığını aktar</button></p>
+      <p style="font-size:12px;margin-top:8px;">Goodreads › My Books › Import and export › Export Library ile indirdiğin .csv dosyasını seç.</p>
     </div>
   </section>
 
@@ -260,38 +401,51 @@
     <div class="stat-row">
       <div class="panel stat-box"><div class="num" id="stat-total-books">0</div><div class="lbl">Kitap</div></div>
       <div class="panel stat-box"><div class="num" id="stat-total-authors">0</div><div class="lbl">Yazar</div></div>
-      <div class="panel stat-box"><div class="num" id="stat-total-tags">0</div><div class="lbl">Tema / Etiket</div></div>
-      <div class="panel stat-box"><div class="num" id="stat-top-tag">—</div><div class="lbl">Baskın Tema</div></div>
+      <div class="panel stat-box"><div class="num" id="stat-total-tags">0</div><div class="lbl">Tema</div></div>
+      <div class="panel stat-box"><div class="num" id="stat-top-tag">—</div><div class="lbl">Şu an en sıcak bölge</div></div>
     </div>
 
     <div class="panel panel-pad" style="margin-bottom:20px;position:relative;overflow:hidden;">
       <div class="section-title" style="margin-bottom:10px;">
         <span class="eyebrow">Entelektüel Profil</span><div class="rule"></div>
+        <select id="profile-history" class="mini-select" style="display:none" onchange="showProfile(this.value)"></select>
         <button class="btn small" onclick="generateAIProfile()" id="ai-profile-btn">Profili Oluştur (AI)</button>
       </div>
       <h3 id="archetype-title">Henüz bir profil çıkarılmadı</h3>
-      <p id="archetype-text" style="color:var(--muted);">Sağ üstteki düğmeye basarak, okuduğun kitaplara dayanan gerçek bir zihinsel profil oluşturabilirsin. Bunun için bir Anthropic API anahtarı gerekir — Ayarlar'dan ekleyebilirsin. Anahtarın hiçbir sunucuya gönderilmez, yalnızca tarayıcında saklanır.</p>
+      <p id="archetype-text" style="color:var(--muted);">Sağ üstteki düğmeye basarak, okuduğun kitaplara dayanan bir zihinsel profil oluşturabilirsin. Bunun için bir Anthropic API anahtarı gerekir — Ayarlar'dan ekleyebilirsin. Anahtarın hiçbir sunucuya gönderilmez, yalnızca tarayıcında saklanır. Oluşturduğun profiller tarihleriyle saklanır; zihninin zamanla nasıl değiştiğini görebilirsin.</p>
       <div id="archetype-stats" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;"></div>
     </div>
 
-    <div class="panel panel-pad constellation-wrap" style="margin-bottom:20px;">
-      <div class="section-title"><h2>Yıldız Haritası</h2><div class="rule"></div></div>
-      <p style="color:var(--muted);font-size:13px;margin-top:-8px;">Yazarların ve temaların zihnindeki takımyıldızı. Büyük noktalar daha çok okuduğun yazarları, bağlar ortak temaları gösterir.</p>
-      <div id="constellation-holder"></div>
-      <div class="constellation-legend">
-        <span><span class="legend-dot" style="background:var(--brass-2)"></span>Yazar</span>
-        <span><span class="legend-dot" style="background:var(--wine-2)"></span>Tema / Etiket</span>
+    <div class="panel panel-pad synapse-panel" style="margin-bottom:20px;">
+      <div class="section-title">
+        <h2>Sinaps Haritası</h2><div class="rule"></div>
+        <button class="btn small ghost" id="replay-btn" onclick="replaySynapses()">Zihnin nasıl kablolandı ▸</button>
       </div>
+      <p class="atlas-sub">Yazarlar nöron, temalar beynin bölgeleri. Bir yazardan okudukça nöronu dallanır; bir yazarla bir tema arasında okudukça aradaki yol kalınlaşır. Son aylarda yoğunlaştığın bölgeler sıcak, uzun süredir uğramadıkların uykuda görünür.</p>
+      <div id="synapse-holder" class="synapse-holder"></div>
+      <div class="synapse-note" id="synapse-note">Bir nöronun ya da bölgenin üstüne gel; tıklarsan rafta o kitaplar açılır.</div>
+      <div class="insights" id="synapse-insights"></div>
+      <div class="atlas-foot"><span id="synapse-more"></span><button class="link-btn" onclick="resetSynapseLayout()">Ağı yeniden ör</button></div>
     </div>
 
     <div class="panel panel-pad" style="margin-bottom:20px;">
-      <div class="section-title"><h2>Zaman İçinde Eğilim</h2><div class="rule"></div></div>
-      <div id="timeline-holder"></div>
+      <div class="section-title"><h2>Temalar</h2><div class="rule"></div><button class="btn small ghost" onclick="openTagManager()">Etiketleri düzenle</button><button class="btn small" id="poster-share-btn" onclick="sharePoster()">↗ Görsel olarak paylaş</button></div>
+      <div id="tag-poster" class="tag-poster"></div>
+      <div class="synapse-note" id="tag-poster-detail" style="text-align:center;"></div>
+      <div class="poster-legend"><span>büyüklük: kaç kitap</span><span><i></i>renk: ne kadar yakın zamanda</span><span>soluk: uykuda</span></div>
+    </div>
+
+    <div class="panel panel-pad" style="margin-bottom:20px;">
+      <div class="section-title"><h2>Okuma Pusulası</h2><div class="rule"></div></div>
+      <p class="atlas-sub">Her kitabı, ona verdiğin puanlara göre yerleştirir: sağa doğru seni ne kadar genişlettiği, yukarı doğru seni ne kadar sarstığı. Noktanın büyüklüğü eyleme ne kadar ittiği.</p>
+      <div id="compass-holder"></div>
+      <div class="synapse-note" id="compass-note"></div>
     </div>
 
     <div class="panel panel-pad">
-      <div class="section-title"><h2>Tema Bulutu</h2><div class="rule"></div></div>
-      <div id="tag-cloud" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      <div class="section-title"><h2>Zaman İçinde</h2><div class="rule"></div></div>
+      <p class="atlas-sub">Kitapları okuduğun aya göre. Okuma tarihi girilmemiş kitaplar, rafa eklendikleri aya sayılır.</p>
+      <div id="timeline-holder"></div>
     </div>
   </section>
 
@@ -342,6 +496,16 @@
           </div>
         </div>
 
+        <div class="field-grid">
+          <div>
+            <label class="field-label">Okuma tarihi</label>
+            <input type="month" id="book-readdate">
+          </div>
+          <div style="display:flex;align-items:flex-end;">
+            <p style="font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 4px;">Bitirdiğin ay; okuyorsan başladığın ay. Sinaps haritasındaki sıcak ve uykudaki bölgeler buna göre hesaplanır.</p>
+          </div>
+        </div>
+
         <div class="field-grid full">
           <div>
             <label class="field-label">Kapak Görseli (URL)</label>
@@ -351,8 +515,18 @@
 
         <div class="field-grid full">
           <div>
-            <label class="field-label">Etiketler (virgülle ayır)</label>
-            <input type="text" id="book-tags" placeholder="Örn: Varoluşçuluk, Vicdan, Psikoloji">
+            <label class="field-label">Etiketler</label>
+            <div class="ti-wrap">
+              <div class="tag-input" id="tag-input" onclick="document.getElementById('ti-field').focus()">
+                <span id="ti-chips" style="display:contents"></span>
+                <input type="text" id="ti-field" placeholder="Etiket yaz, Enter ile ekle" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
+              </div>
+              <div class="ti-suggest" id="ti-suggest" hidden></div>
+            </div>
+            <div class="ti-hint" id="ti-hint"></div>
+            <div class="ti-row" id="ti-dict"></div>
+            <div class="ti-row" id="ti-google"></div>
+            <div class="ti-row" id="ti-popular"></div>
           </div>
         </div>
 
@@ -392,6 +566,51 @@
   </div>
 </div>
 
+<!-- ===== ABOUT MODAL ===== -->
+<div id="modal-about" class="modal-bg" style="display:none;">
+  <div class="modal-box" style="max-width:520px;">
+    <div class="modal-head">
+      <h3 class="serif" style="margin:0;font-size:18px;">Yaşayan Kitaplık Hakkında</h3>
+      <button class="icon-btn" onclick="closeAboutModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13.5px;color:var(--parchment);line-height:1.7;">
+        Okuma yolculuğunu bilişsel bir atlasa dönüştüren, tarayıcı tabanlı bir kütüphane uygulaması. <em>Lryiu Labs — Experimental Suite'in bir parçasıdır.</em>
+      </p>
+      <div style="margin-top:16px;border-top:1px solid var(--hairline);padding-top:16px;">
+        <label class="field-label">Tema Sözlüğü</label>
+        <p style="font-size:12.5px;color:var(--parchment-dim);margin-top:8px;line-height:1.7;">
+          Uygulamayla birlikte yüzlerce kitabı kapsayan, elle denetlenmiş bir tema sözlüğü gelir. Eklediğin kitabın başlığı ve yazarı sözlükteki bir kitapla eşleşirse temaları sana önerilir. Hangilerinin rafına gireceğine sen karar verirsin; senin verdiğin etiketlerin üzerine hiçbir zaman yazılmaz.
+        </p>
+      </div>
+      <div style="margin-top:16px;border-top:1px solid var(--hairline);padding-top:16px;">
+        <label class="field-label">🔒 Verilerin Nerede Saklanıyor?</label>
+        <p style="font-size:12.5px;color:var(--parchment-dim);margin-top:8px;line-height:1.7;">
+          Bu uygulamanın sunucusu yoktur. Tüm kitapların yalnızca <strong>kendi tarayıcında</strong> (localStorage) saklanır — kayıt gerekmez, verini kimse göremez. Ama tarayıcı verilerini temizlersen ya da başka bir cihazdan girersen kitapların görünmez. Düzenli olarak Ayarlar'dan <strong>"JSON İndir"</strong> ile yedek almanı öneririz.
+        </p>
+      </div>
+      <div style="margin-top:16px;border-top:1px solid var(--hairline);padding-top:16px;">
+        <a href="https://github.com/Lryiu/living-shelf" target="_blank" rel="noopener" class="btn small" style="text-decoration:none;display:inline-flex;">↗ GitHub'da Kaynak Kod & README</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GOODREADS MODAL ===== -->
+<div id="modal-goodreads" class="modal-bg" style="display:none;">
+  <div class="modal-box" style="max-width:600px;">
+    <div class="modal-head">
+      <h3 class="serif" style="margin:0;font-size:18px;">Goodreads'ten aktar</h3>
+      <button class="icon-btn" type="button" onclick="closeGoodreadsModal()">✕</button>
+    </div>
+    <div class="modal-body" id="gr-body"></div>
+    <div class="modal-foot">
+      <button class="btn ghost" type="button" onclick="closeGoodreadsModal()">Vazgeç</button>
+      <button class="btn primary" type="button" id="gr-go" onclick="commitGoodreads()">Rafa diz</button>
+    </div>
+  </div>
+</div>
+
 <!-- ===== SETTINGS MODAL ===== -->
 <div id="modal-settings" class="modal-bg" style="display:none;">
   <div class="modal-box" style="max-width:520px;">
@@ -401,17 +620,23 @@
     </div>
     <div class="modal-body">
       <label class="field-label">Google Books API Anahtarı (opsiyonel)</label>
-      <input type="password" id="google-key-input" placeholder="AIza...">
+      <input type="text" class="secret" id="google-key-input" name="google-books-api-key" placeholder="AIza..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
       <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">
         "Google Books'tan Getir" düğmesi önce Google Books'u, orada bulunamazsa veya kota dolarsa otomatik olarak anahtar gerektirmeyen Open Library'yi dener — bu yüzden anahtarsız da genelde sorunsuz çalışır. Kendi ücretsiz Google Books anahtarını eklersen ilk kaynağın kotası tamamen sana özel olur.
       </p>
 
       <div style="margin-top:20px;border-top:1px solid var(--hairline);padding-top:18px;">
         <label class="field-label">Anthropic API Anahtarı (opsiyonel)</label>
-        <input type="password" id="anthropic-key-input" placeholder="sk-ant-...">
+        <input type="text" class="secret" id="anthropic-key-input" name="anthropic-api-key" placeholder="sk-ant-..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
         <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">
-          Bu anahtar yalnızca kendi tarayıcında, localStorage içinde saklanır ve doğrudan Anthropic API'sine gönderilir; başka hiçbir sunucudan geçmez. "Entelektüel Profil" özelliği için gereklidir. Anahtarın yoksa <a href="https://console.anthropic.com/" target="_blank" style="color:var(--brass-2);">console.anthropic.com</a> adresinden edinebilirsin.
+          Bu anahtar yalnızca kendi tarayıcında, localStorage içinde saklanır ve doğrudan Anthropic API'sine gönderilir; başka hiçbir sunucudan geçmez. "Entelektüel Profil" özelliği için gereklidir. Anahtarın yoksa <a href="https://console.anthropic.com/" target="_blank" rel="noopener" style="color:var(--brass-2);">console.anthropic.com</a> adresinden edinebilirsin.
         </p>
+      </div>
+
+      <div id="dict-settings" style="margin-top:20px;border-top:1px solid var(--hairline);padding-top:18px;">
+        <label class="field-label">Tema Sözlüğü</label>
+        <p id="dict-status" class="dict-note" style="margin-top:4px;"></p>
+        <div style="margin-top:8px;"><button class="btn small" id="dict-fill-btn" onclick="fillUntaggedFromDict()">Etiketsiz kitaplarımı sözlükle tamamla</button></div>
       </div>
 
       <div style="margin-top:20px;border-top:1px solid var(--hairline);padding-top:18px;">
@@ -419,6 +644,7 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
           <button class="btn small" onclick="exportJSON()">JSON İndir</button>
           <button class="btn small" onclick="document.getElementById('import-file').click()">JSON İçe Aktar</button>
+          <button class="btn small" onclick="startGoodreadsImport()">Goodreads'ten Aktar</button>
           <button class="btn small" onclick="loadSampleData()">Örnek Veri Yükle</button>
           <button class="btn small ghost" style="border-color:var(--wine);color:var(--wine-2);" onclick="clearAllData()">Tümünü Sil</button>
         </div>
@@ -440,23 +666,60 @@ const SETTINGS_KEY = 'yasayanKitaplik.settings.v2';
 let books = [];
 let settings = { anthropicKey: '', googleBooksKey: '' };
 
+const STATUSES = ['okundu','okunuyor','yarim'];
+function newId(){ return 'b_'+Date.now()+'_'+Math.random().toString(36).slice(2,7); }
+function clampNum(v, d){ v = Number(v); return Number.isFinite(v) ? Math.max(0, Math.min(100, Math.round(v))) : d; }
+// Dışarıdan gelen (yedek dosyası, eski sürüm) her kaydı güvenli ve eksiksiz hâle getirir
+function normalizeBook(b){
+  if(!b || typeof b !== 'object') return null;
+  const str = v => (v === undefined || v === null) ? '' : String(v);
+  const title = str(b.title).trim();
+  if(!title) return null;
+  let cover = str(b.cover).trim();
+  if(cover && !/^https?:\/\//i.test(cover)) cover = '';
+  return {
+    id: str(b.id) || newId(),
+    title,
+    author: str(b.author).trim(),
+    category: str(b.category).trim(),
+    status: STATUSES.includes(b.status) ? b.status : 'okundu',
+    cover,
+    tags: (Array.isArray(b.tags) ? b.tags : str(b.tags).split(',')).map(t=>str(t).trim()).filter(Boolean),
+    expansion: clampNum(b.expansion, 75),
+    emotional: clampNum(b.emotional, 80),
+    action: clampNum(b.action, 60),
+    quote: str(b.quote),
+    description: str(b.description),
+    readDate: /^\d{4}-(0[1-9]|1[0-2])$/.test(str(b.readDate)) ? str(b.readDate) : '',
+    dateAdded: Number.isFinite(Number(b.dateAdded)) && Number(b.dateAdded) > 0 ? Number(b.dateAdded) : Date.now()
+  };
+}
+function normalizeList(list){
+  const seen = new Set();
+  return (Array.isArray(list) ? list : []).map(normalizeBook).filter(Boolean).map(b=>{
+    if(seen.has(b.id)) b.id = newId();
+    seen.add(b.id);
+    return b;
+  });
+}
 function loadBooksFromStorage(){
   try{
     const stored = localStorage.getItem(STORAGE_KEY);
-    books = stored ? JSON.parse(stored) : [];
+    books = normalizeList(stored ? JSON.parse(stored) : []);
   }catch(e){ books = []; }
 }
 function saveToStorage(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(books));
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(books)); }
+  catch(e){ alert('Kitaplar kaydedilemedi: tarayıcının depolama alanı dolu ya da kapalı olabilir. Ayarlar\'dan JSON yedeği indir.'); }
 }
 function loadSettings(){
   try{
     const s = localStorage.getItem(SETTINGS_KEY);
-    settings = s ? JSON.parse(s) : { anthropicKey: '', googleBooksKey: '' };
+    settings = Object.assign({ anthropicKey: '', googleBooksKey: '' }, s ? JSON.parse(s) : {});
   }catch(e){ settings = { anthropicKey: '', googleBooksKey: '' }; }
 }
 function saveSettingsToStorage(){
-  localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  try{ localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); }catch(e){}
 }
 
 /* =======================================================================
@@ -468,7 +731,7 @@ function switchTab(tab){
   document.getElementById('view-'+tab).classList.add('active');
   document.querySelector(`.tab-btn[data-tab="${tab}"]`).classList.add('active');
   if(tab==='authors') renderAuthors();
-  if(tab==='impact') renderImpactView();
+  if(tab==='impact') renderImpactView(); else stopSynapses();
 }
 
 function renderAllViews(){
@@ -493,14 +756,15 @@ function coverColorFromString(str){
 function renderShelf(){
   const grid = document.getElementById('shelf-grid');
   const empty = document.getElementById('shelf-empty');
-  const q = (document.getElementById('shelf-search').value || '').toLowerCase();
+  const q = (document.getElementById('shelf-search').value || '').trim().toLocaleLowerCase('tr');
   const statusFilter = document.getElementById('shelf-status-filter').value;
   const sortBy = document.getElementById('shelf-sort').value;
 
   let list = books.filter(b=>{
-    const hay = [b.title,b.author,b.category,(b.tags||[]).join(' ')].join(' ').toLowerCase();
+    const hay = [b.title,b.author,b.category,(b.tags||[]).join(' ')].join(' ').toLocaleLowerCase('tr');
     if(q && !hay.includes(q)) return false;
-    if(statusFilter && b.status !== statusFilter) return false;
+    if(statusFilter === 'notag'){ if((b.tags||[]).length) return false; }
+    else if(statusFilter && b.status !== statusFilter) return false;
     return true;
   });
 
@@ -516,17 +780,25 @@ function renderShelf(){
     card.className='book-card';
     card.onclick=()=>openBookModal(b);
     const coverInner = b.cover
-      ? `<img src="${escapeHtml(b.cover)}" alt="">`
+      ? `<img src="${escapeHtml(b.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`
       : `<div class="cover-fallback" style="background:${coverColorFromString(b.title+b.author)}; width:100%;height:100%;display:flex;align-items:center;justify-content:center;">${escapeHtml(initials(b.title))}</div>`;
     card.innerHTML = `
       <div class="book-cover">
         ${coverInner}
-        <span class="status-chip status-${b.status}">${statusLabel(b.status)}</span>
+        <span class="status-chip status-${escapeHtml(b.status)}">${escapeHtml(statusLabel(b.status))}</span>
       </div>
       <div class="book-meta">
         <p class="title">${escapeHtml(b.title)}</p>
         <div class="author">${escapeHtml(b.author)}</div>
       </div>`;
+    const img = card.querySelector('.book-cover img');
+    if(img) img.addEventListener('error', ()=>{
+      const fb = document.createElement('div');
+      fb.className = 'cover-fallback';
+      fb.style.cssText = `background:${coverColorFromString(b.title+b.author)};width:100%;height:100%;display:flex;align-items:center;justify-content:center;`;
+      fb.textContent = initials(b.title);
+      img.replaceWith(fb);
+    }, { once:true });
     grid.appendChild(card);
   });
 }
@@ -587,187 +859,663 @@ function renderAuthors(){
    ======================================================================= */
 function getTagAggregates(){
   const counts = {};
-  books.forEach(b=>(b.tags||[]).forEach(t=>{
-    const k = t.trim();
-    if(!k) return;
-    counts[k] = (counts[k]||0)+1;
-  }));
+  tagIndex().forEach(e=>{ counts[e.label] = e.count; });
   return counts;
 }
 
+/* =======================================================================
+   OKUMA ZAMANI — okuma tarihi (ay) varsa o, yoksa rafa eklenme günü
+   ======================================================================= */
+function bookTime(b){
+  if(b.readDate && /^\d{4}-\d{2}$/.test(b.readDate)){
+    const [y,m] = b.readDate.split('-').map(Number);
+    return new Date(y, m-1, 15).getTime();
+  }
+  return b.dateAdded || Date.now();
+}
+const MONTH = 1000*60*60*24*30.44;
+function monthsAgo(t){ return Math.max(0, (Date.now() - t) / MONTH); }
+
+/* =======================================================================
+   ZİHİN ATLASI
+   ======================================================================= */
 function renderImpactView(){
-  const totalBooks = books.length;
   const authorsSet = new Set(books.map(b=>b.author).filter(Boolean));
-  const tagCounts = getTagAggregates();
-  const tagKeys = Object.keys(tagCounts);
-  const topTag = tagKeys.sort((a,b)=>tagCounts[b]-tagCounts[a])[0] || '—';
-
-  document.getElementById('stat-total-books').innerText = totalBooks;
+  const idx = tagIndex();
+  const heat = tagHeat();
+  let hot = '—', hv = 0;
+  heat.forEach((v,k)=>{ if(v.heat > hv){ hv = v.heat; hot = idx.get(k) ? idx.get(k).label : '—'; } });
+  document.getElementById('stat-total-books').innerText = books.length;
   document.getElementById('stat-total-authors').innerText = authorsSet.size;
-  document.getElementById('stat-total-tags').innerText = tagKeys.length;
-  document.getElementById('stat-top-tag').innerText = topTag;
-
-  renderConstellation();
+  document.getElementById('stat-total-tags').innerText = idx.size;
+  document.getElementById('stat-top-tag').innerText = hv > 0.15 ? hot : '—';
+  renderProfileArea();
+  if(!document.getElementById('view-impact').classList.contains('active')){ stopSynapses(); return; }
+  renderSynapses();
+  renderTagPoster();
+  renderCompass();
   renderTimeline();
-  renderTagCloud(tagCounts);
 }
 
-function renderTagCloud(tagCounts){
-  const wrap = document.getElementById('tag-cloud');
-  wrap.innerHTML='';
-  const entries = Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]);
-  if(!entries.length){
-    wrap.innerHTML = '<span style="color:var(--muted);font-size:13px;">Henüz etiket yok. Kitap eklerken etiket gir.</span>';
-    return;
-  }
-  const max = entries[0][1];
-  entries.forEach(([tag,count])=>{
-    const scale = 0.85 + (count/max)*0.9;
-    const el = document.createElement('span');
-    el.className='tag-pill';
-    el.style.fontSize = (11*scale).toFixed(1)+'px';
-    el.textContent = `${tag} · ${count}`;
-    wrap.appendChild(el);
-  });
-}
-
-/* ---- Yıldız haritası: D3 force-directed yazar/tema ağı ---- */
-function renderConstellation(){
-  const holder = document.getElementById('constellation-holder');
-  holder.innerHTML='';
-  const width = holder.clientWidth || 900;
-  const height = 420;
-
-  const authorCounts = {};
-  const tagCounts = getTagAggregates();
-  books.forEach(b=>{ if(b.author) authorCounts[b.author]=(authorCounts[b.author]||0)+1; });
-
-  const authorNames = Object.keys(authorCounts);
-  if(!authorNames.length){
-    holder.innerHTML = '<div class="empty-state"><h3>Atlas henüz boş</h3><p>Kitap ekledikçe burada bir takımyıldızı belirecek.</p></div>';
-    return;
-  }
-
-  const nodes = [];
-  const nodeIndex = {};
-  authorNames.forEach(a=>{
-    nodeIndex['a:'+a] = nodes.length;
-    nodes.push({id:'a:'+a, label:a, type:'author', val:authorCounts[a]});
-  });
-  Object.keys(tagCounts).forEach(t=>{
-    nodeIndex['t:'+t] = nodes.length;
-    nodes.push({id:'t:'+t, label:t, type:'tag', val:tagCounts[t]});
-  });
-
-  const linkSet = {};
+/* Temaların sıcaklığı: son aylarda okunan kitaplar daha çok ısıtır */
+function tagHeat(){
+  const out = new Map();
   books.forEach(b=>{
-    if(!b.author) return;
-    (b.tags||[]).forEach(t=>{
-      const tag = t.trim();
-      if(!tag) return;
-      const key = 'a:'+b.author+'|t:'+tag;
-      linkSet[key] = (linkSet[key]||0)+1;
+    const t = bookTime(b);
+    const age = b.status === 'okunuyor' ? 0 : monthsAgo(t);
+    const w = b.status === 'yarim' ? 0.3 : 1;
+    (b.tags||[]).forEach(tag=>{
+      const k = tagKey(tag);
+      const e = out.get(k) || {heat:0, last:0};
+      e.heat += w * Math.exp(-age/2.5);
+      e.last = Math.max(e.last, t);
+      out.set(k, e);
     });
   });
-  const links = Object.entries(linkSet).map(([k,w])=>{
-    const [s,t] = k.split('|');
-    return {source: nodeIndex[s], target: nodeIndex[t], weight:w};
-  }).filter(l=>l.source!==undefined && l.target!==undefined);
+  let max = 0; out.forEach(e=>{ max = Math.max(max, e.heat); });
+  out.forEach(e=>{ e.raw = e.heat; e.heat = max ? e.heat / max : 0; });
+  return out;
+}
+function masteryNext(count){
+  if(count>=7) return null;
+  if(count>=4) return {n:7-count, label:'Büyük Usta'};
+  if(count>=2) return {n:4-count, label:'Usta'};
+  return {n:2-count, label:'Kalfa'};
+}
 
-  const svg = d3.select(holder).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('preserveAspectRatio','xMidYMid meet');
+/* ---------------- SİNAPS HARİTASI ---------------- */
+const LAYOUT_KEY = 'yasayanKitaplik.synapseLayout.v1';
+const SW = 900, SH = 520;
+let synRAF = null, synState = null, replayRAF = null;
 
-  const g = svg.append('g');
+function loadLayout(){ try{ return JSON.parse(localStorage.getItem(LAYOUT_KEY)) || {}; }catch(e){ return {}; } }
+function saveLayout(l){ try{ localStorage.setItem(LAYOUT_KEY, JSON.stringify(l)); }catch(e){} }
+function resetSynapseLayout(){ try{ localStorage.removeItem(LAYOUT_KEY); }catch(e){} renderSynapses(); }
+function stopSynapses(){
+  if(synRAF){ cancelAnimationFrame(synRAF); synRAF = null; }
+  if(replayRAF){ cancelAnimationFrame(replayRAF); replayRAF = null; }
+}
 
-  const maxVal = d3.max(nodes, d=>d.val) || 1;
-  const radius = d3.scaleSqrt().domain([1,maxVal]).range([5,26]);
-
-  const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).distance(70).strength(0.35))
-    .force('charge', d3.forceManyBody().strength(-140))
-    .force('center', d3.forceCenter(width/2, height/2))
-    .force('collide', d3.forceCollide(d=>radius(d.val)+14));
-
-  const link = g.append('g').selectAll('line')
-    .data(links).join('line')
-    .attr('stroke', 'rgba(201,159,95,0.18)')
-    .attr('stroke-width', d=>Math.min(3, 0.6 + d.weight*0.5));
-
-  const node = g.append('g').selectAll('g')
-    .data(nodes).join('g')
-    .style('cursor','default');
-
-  node.append('circle')
-    .attr('r', d=>radius(d.val))
-    .attr('fill', d=> d.type==='author' ? 'rgba(201,159,95,0.22)' : 'rgba(162,81,90,0.22)')
-    .attr('stroke', d=> d.type==='author' ? '#c99f5f' : '#a2515a')
-    .attr('stroke-width', 1.2);
-
-  node.append('text')
-    .text(d=>d.label)
-    .attr('text-anchor','middle')
-    .attr('dy', d=>radius(d.val)+13)
-    .attr('font-family','JetBrains Mono, monospace')
-    .attr('font-size', d=> d.type==='author' ? 10.5 : 9.5)
-    .attr('fill', d=> d.type==='author' ? '#e8c07f' : '#c67078');
-
-  simulation.on('tick', ()=>{
-    nodes.forEach(d=>{
-      d.x = Math.max(radius(d.val)+10, Math.min(width-radius(d.val)-10, d.x));
-      d.y = Math.max(radius(d.val)+16, Math.min(height-radius(d.val)-16, d.y));
+function buildSynapseData(){
+  const idx = tagIndex(), heat = tagHeat();
+  const authors = new Map();
+  const pairs = new Map();
+  const ordered = books.slice().sort((a,b)=>bookTime(a)-bookTime(b));
+  ordered.forEach((b,i)=>{
+    if(!b.author) return;
+    const ak = b.author.trim().toLocaleLowerCase('tr');
+    const a = authors.get(ak) || {id:'a:'+ak, label:b.author, books:[], born:i, reading:false, allHalf:true, fresh:false};
+    a.books.push(b);
+    if(b.status === 'okunuyor') a.reading = true;
+    if(b.status !== 'yarim') a.allHalf = false;
+    if(Date.now() - (b.dateAdded||0) < 21*24*3600*1000) a.fresh = true;
+    authors.set(ak, a);
+    (b.tags||[]).forEach(t=>{
+      const tk = tagKey(t); if(!idx.has(tk)) return;
+      const pk = ak+'|'+tk;
+      const p = pairs.get(pk) || {a:ak, t:tk, w:0, born:i, first:bookTime(b)};
+      p.w += (b.status === 'yarim' ? 0.5 : 1);
+      pairs.set(pk, p);
     });
-    link
-      .attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
-      .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
-    node.attr('transform', d=>`translate(${d.x},${d.y})`);
+  });
+  // haritada en fazla 16 bölge ve 32 yazar: kalabalık olunca okunmaz
+  const tagList = [...idx.entries()].sort((a,b)=>b[1].count-a[1].count);
+  const tagsShown = tagList.slice(0,16).map(([k,e])=>k);
+  const authorList = [...authors.values()].sort((a,b)=>b.books.length-a.books.length);
+  const authorsShown = authorList.slice(0,32);
+  const maxCount = tagList.length ? tagList[0][1].count : 1;
+  const tagBorn = {};
+  pairs.forEach(p=>{ tagBorn[p.t] = Math.min(tagBorn[p.t] ?? 1e9, p.born); });
+  const nodes = [];
+  const nodeById = {};
+  tagsShown.forEach(k=>{
+    const e = idx.get(k), h = heat.get(k) || {heat:0, last:0};
+    const n = {id:'t:'+k, key:k, type:'tag', label:e.label, count:e.count,
+      r: 38 + 62*Math.sqrt(e.count/maxCount), heat:h.heat,
+      sleep: e.count >= 2 && h.last && monthsAgo(h.last) > 8, sleepMonths: h.last ? Math.round(monthsAgo(h.last)) : 0,
+      born: tagBorn[k] ?? 0};
+    nodes.push(n); nodeById[n.id] = n;
+  });
+  authorsShown.forEach(a=>{
+    const k = a.books.length;
+    const n = {id:a.id, key:a.id.slice(2), type:'author', label:a.label, count:k, r: 3 + Math.min(k,8)*0.95,
+      reading:a.reading, half:a.allHalf, fresh:a.fresh, born:a.born, level:getMasteryLevel(k).label, next:masteryNext(k)};
+    nodes.push(n); nodeById[n.id] = n;
+  });
+  const links = [];
+  pairs.forEach(p=>{
+    const s = nodeById['a:'+p.a], t = nodeById['t:'+p.t];
+    if(s && t) links.push({source:s, target:t, w:p.w, born:p.born, first:p.first});
+  });
+  return {nodes, links, extraTags: Math.max(0, tagList.length-16), extraAuthors: Math.max(0, authorList.length-32)};
+}
+
+function layoutSynapses(nodes, links){
+  const saved = loadLayout();
+  let hasNew = false;
+  nodes.forEach(n=>{
+    const s = saved[n.id];
+    if(s){ n.x = s.x; n.y = s.y; n.fx = s.x; n.fy = s.y; } else hasNew = true;
+  });
+  nodes.filter(n=>n.fx == null).forEach(n=>{
+    const nb = links.filter(l=>l.source===n || l.target===n).map(l=>l.source===n ? l.target : l.source).filter(m=>m.x != null);
+    if(nb.length){
+      n.x = nb.reduce((s,m)=>s+m.x,0)/nb.length + (Math.random()-.5)*60;
+      n.y = nb.reduce((s,m)=>s+m.y,0)/nb.length + (Math.random()-.5)*60;
+    }else{ n.x = SW/2 + (Math.random()-.5)*SW*.6; n.y = SH/2 + (Math.random()-.5)*SH*.6; }
+  });
+  if(hasNew){
+    const sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).distance(l=>l.target.r*0.8 + 14).strength(l=>0.3 + Math.min(l.w,5)*0.06))
+      .force('charge', d3.forceManyBody().strength(d=>d.type==='tag' ? -420 : -90))
+      .force('collide', d3.forceCollide(d=>d.type==='tag' ? d.r*0.78 : Math.max(d.r + 26, d.label.length*3.3)).iterations(3))
+      .force('x', d3.forceX(SW/2).strength(0.03))
+      .force('y', d3.forceY(SH/2).strength(0.07))
+      .stop();
+    for(let i=0;i<320;i++){
+      sim.tick();
+      nodes.forEach(n=>{
+        const mx = n.type==='tag' ? n.r*0.75 : 46, my = n.type==='tag' ? n.r*0.92 : 34;
+        n.x = Math.max(mx, Math.min(SW-mx, n.x));
+        n.y = Math.max(my, Math.min(SH-my, n.y));
+      });
+    }
+  }
+  nodes.forEach(n=>{ n.fx = n.fy = null; saved[n.id] = {x:Math.round(n.x), y:Math.round(n.y)}; });
+  saveLayout(saved);
+}
+
+function synapseNote(text){ document.getElementById('synapse-note').textContent = text || 'Bir nöronun ya da bölgenin üstüne gel; tıklarsan rafta o kitaplar açılır.'; }
+
+function renderSynapses(){
+  stopSynapses();
+  const holder = document.getElementById('synapse-holder');
+  holder.innerHTML = '';
+  document.getElementById('synapse-insights').innerHTML = '';
+  document.getElementById('synapse-more').textContent = '';
+  if(!books.some(b=>b.author)){
+    holder.innerHTML = '<div class="empty-state"><h3>Ağ henüz boş</h3><p>Kitap ekledikçe burada nöronlar doğacak, bağlar kurulacak.</p></div>';
+    return;
+  }
+  const {nodes, links, extraTags, extraAuthors} = buildSynapseData();
+  layoutSynapses(nodes, links);
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (tag, attrs, parent)=>{ const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${SW} ${SH}`);
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', 'Sinaps haritası');
+  holder.appendChild(svg);
+  const gReg = mk('g',{},svg), gLink = mk('g',{},svg), gPulse = mk('g',{},svg), gNeu = mk('g',{},svg), gLab = mk('g',{},svg);
+
+  const tags = nodes.filter(n=>n.type==='tag'), authors = nodes.filter(n=>n.type==='author');
+  tags.forEach(r=>{
+    r.g = mk('g',{class:'syn-node'},gReg);
+    const base = r.sleep ? 0.022 : 0.03 + 0.045*r.heat;
+    for(let i=4;i>=1;i--) mk('circle',{cx:r.x, cy:r.y, r:r.r*i/4, fill:'#a2515a', 'fill-opacity':base},r.g);
+    if(r.heat > 0.35 && !r.sleep) r.hotRing = mk('circle',{cx:r.x, cy:r.y, r:r.r*0.55, fill:'#c99f5f', 'fill-opacity':0.04 + 0.06*r.heat},r.g);
+    mk('circle',{cx:r.x, cy:r.y, r:r.r, fill:'none', stroke:'#a2515a', 'stroke-opacity': r.sleep ? 0.14 : 0.22 + 0.25*r.heat, 'stroke-dasharray':'2 5'},r.g);
+    const t = mk('text',{x:r.x, y:r.y + 5, 'text-anchor':'middle', 'font-family':'Fraunces, serif', 'font-style':'italic',
+      'font-size': 12.5 + Math.min(4, r.count*0.35), fill: r.sleep ? '#6f5a5e' : (r.heat > 0.5 ? '#e3a0a6' : '#c67078')}, r.g);
+    t.textContent = r.label;
+  });
+  links.forEach(l=>{
+    const a = l.source, r = l.target;
+    const mx = (a.x+r.x)/2 + (r.y-a.y)*0.18, my = (a.y+r.y)/2 - (r.x-a.x)*0.18;
+    l.p = mk('path',{class:'syn-link', d:`M${a.x} ${a.y} Q${mx} ${my} ${r.x} ${r.y}`, fill:'none', stroke:'#c99f5f',
+      'stroke-opacity': Math.min(0.85, 0.12 + l.w*0.11), 'stroke-width': Math.min(5, 0.6 + l.w*0.7), 'stroke-linecap':'round'}, gLink);
+    l.len = l.p.getTotalLength();
+  });
+  authors.forEach(a=>{
+    a.g = mk('g',{class:'syn-node'},gNeu);
+    const k = Math.min(a.count, 8), n = Math.min(2*a.count + 2, 18), col = a.half ? '#7a6440' : '#e8c07f';
+    const seed = [...a.label].reduce((s,c)=>s + c.charCodeAt(0), 0);
+    for(let i=0;i<n;i++){
+      const ang = i/n*Math.PI*2 + seed*0.37, L = 9 + k*2.6 + ((seed+i)%3)*4;
+      const bx = a.x + Math.cos(ang)*L, by = a.y + Math.sin(ang)*L;
+      const cx = a.x + Math.cos(ang+0.35)*L*0.55, cy = a.y + Math.sin(ang+0.35)*L*0.55;
+      const d = mk('path',{d:`M${a.x} ${a.y} Q${cx} ${cy} ${bx} ${by}`, fill:'none', stroke:col, 'stroke-opacity': a.half ? 0.32 : 0.55, 'stroke-width':0.9, 'stroke-linecap':'round'}, a.g);
+      if(a.half) d.setAttribute('stroke-dasharray','2 3');
+      if(a.count >= 4 && i%2 === 0){
+        const ex = bx + Math.cos(ang-0.5)*6, ey = by + Math.sin(ang-0.5)*6;
+        mk('path',{d:`M${bx} ${by} L${ex} ${ey}`, stroke:col, 'stroke-opacity':0.45, 'stroke-width':0.8, fill:'none'}, a.g);
+      }
+      if(a.count >= 7 && i%3 === 0){
+        const ex = bx + Math.cos(ang+0.6)*5, ey = by + Math.sin(ang+0.6)*5;
+        mk('path',{d:`M${bx} ${by} L${ex} ${ey}`, stroke:col, 'stroke-opacity':0.4, 'stroke-width':0.7, fill:'none'}, a.g);
+      }
+      if(a.fresh){
+        const len = L*1.25;
+        d.style.strokeDasharray = len; d.style.strokeDashoffset = len;
+        d.style.transition = `stroke-dashoffset 1.6s ease ${0.3 + i*0.07}s`;
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{ d.style.strokeDashoffset = 0; }));
+      }
+    }
+    a.halo = mk('circle',{cx:a.x, cy:a.y, r:a.r*1.7, fill:'#c99f5f', 'fill-opacity': a.half ? 0.04 : 0.12}, a.g);
+    mk('circle',{cx:a.x, cy:a.y, r:a.r, fill: a.half ? '#2a2418' : '#1c1508', stroke:col, 'stroke-width':1.3}, a.g);
+    mk('circle',{cx:a.x, cy:a.y, r:1.6, fill:col}, a.g);
+    a.lab = mk('text',{x:a.x, y:a.y + a.r + 16, 'text-anchor':'middle', 'font-family':'JetBrains Mono, monospace', 'font-size':10.5, fill: a.half ? '#6f7686' : '#e8c07f', style:'transition:opacity .35s ease;pointer-events:none'}, gLab);
+    a.lab.textContent = a.label;
+  });
+
+  // odak ve tıklama
+  let focusId = null;
+  const describe = n=>{
+    if(n.type==='author'){
+      let s = `${n.label} · ${n.count} kitap · ${n.level}`;
+      if(n.reading) s += ' · şu an okunuyor';
+      else if(n.half) s += ' · yarım bırakıldı, uykuda';
+      if(n.next) s += ` — ${n.next.n} kitap daha: ${n.next.label}`;
+      return s;
+    }
+    const c = links.filter(l=>l.target===n).length;
+    let s = `${n.label} bölgesi · ${n.count} kitap · ${c} yazara bağlı`;
+    if(n.sleep) s += ` · ${n.sleepMonths} aydır uykuda`;
+    else if(n.heat > 0.6) s += ' · şu an sıcak';
+    return s;
+  };
+  const focus = n=>{
+    focusId = n.id;
+    const on = new Set([n.id]);
+    links.forEach(l=>{ if(l.source===n || l.target===n){ on.add(l.source.id); on.add(l.target.id); } });
+    nodes.forEach(m=>{ m.g.style.opacity = on.has(m.id) ? 1 : 0.14; if(m.lab) m.lab.style.opacity = on.has(m.id) ? 1 : 0.18; });
+    links.forEach(l=>{ l.p.style.strokeOpacity = (l.source===n || l.target===n) ? 0.95 : 0.04; });
+    synapseNote(describe(n));
+  };
+  const unfocus = ()=>{
+    focusId = null;
+    nodes.forEach(m=>{ m.g.style.opacity = ''; if(m.lab) m.lab.style.opacity = ''; });
+    links.forEach(l=>{ l.p.style.strokeOpacity = ''; });
+    synapseNote();
+  };
+  nodes.forEach(n=>{
+    n.g.addEventListener('mouseenter', ()=>focus(n));
+    n.g.addEventListener('mouseleave', unfocus);
+    n.g.addEventListener('click', ()=>{
+      switchTab('shelf');
+      const s = document.getElementById('shelf-search');
+      s.value = n.label; renderShelf(); window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  // sinyaller
+  const pulses = [];
+  let last = performance.now();
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const frame = now=>{
+    const dt = Math.min(0.05, (now-last)/1000); last = now;
+    if(!reduce){
+      links.forEach(l=>{
+        if(l.p.style.display === 'none') return;
+        let rate = 0.1 * Math.min(l.w, 6) * (0.6 + 1.6*l.target.heat);
+        if(focusId && (l.source.id===focusId || l.target.id===focusId)) rate *= 4;
+        if(l.target.sleep) rate *= 0.2;
+        if(l.source.half) rate *= 0.15;
+        if(Math.random() < rate*dt && pulses.length < 80){
+          const c = mk('circle',{r: 1.6 + Math.min(l.w,5)*0.3, fill:'#f3d9a6'}, gPulse);
+          pulses.push({l, c, t:0, sp: 0.2 + Math.random()*0.15 + l.target.heat*0.1, rev: Math.random() < 0.4});
+        }
+      });
+      for(let i=pulses.length-1;i>=0;i--){
+        const p = pulses[i]; p.t += p.sp*dt;
+        if(p.t >= 1){ p.c.remove(); pulses.splice(i,1); continue; }
+        const pt = p.l.p.getPointAtLength((p.rev ? 1-p.t : p.t) * p.l.len);
+        p.c.setAttribute('cx', pt.x); p.c.setAttribute('cy', pt.y);
+        const vis = !focusId || p.l.source.id===focusId || p.l.target.id===focusId;
+        p.c.setAttribute('opacity', (vis ? 1 : 0.08) * Math.sin(p.t*Math.PI) * (p.l.p.style.opacity === '0' ? 0 : 1));
+      }
+      authors.forEach(a=>{ if(a.reading) a.halo.setAttribute('r', a.r*1.7*(1 + 0.25*Math.sin(now/380))); });
+    }
+    synRAF = requestAnimationFrame(frame);
+  };
+  synRAF = requestAnimationFrame(frame);
+  synState = {nodes, links};
+
+  // öngörüler
+  const ins = document.getElementById('synapse-insights');
+  const add = (pre, strong, post)=>{ const s = document.createElement('span'); s.append(pre); const b = document.createElement('b'); b.textContent = strong; s.append(b); if(post) s.append(post); ins.append(s); };
+  const strongest = links.slice().sort((a,b)=>b.w-a.w)[0];
+  if(strongest && strongest.w >= 2) add('En güçlü bağın: ', strongest.source.label + ' ↔ ' + strongest.target.label);
+  const fresh = links.filter(l=>Date.now() - l.first < 31*24*3600*1000).sort((a,b)=>b.first-a.first)[0];
+  if(fresh) add('Bu ay yeni bağ: ', fresh.source.label + ' ↔ ' + fresh.target.label);
+  const hotR = tags.filter(t=>!t.sleep && t.heat > 0.5).sort((a,b)=>b.heat-a.heat)[0];
+  if(hotR) add('Şu an en sıcak bölge: ', hotR.label);
+  const sleepR = tags.filter(t=>t.sleep).sort((a,b)=>b.count-a.count)[0];
+  if(sleepR) add('Uykudaki bölge: ', sleepR.label, ' · ' + sleepR.sleepMonths + ' ay');
+  const close = authors.filter(a=>a.next && !a.half).sort((a,b)=>a.next.n-b.next.n || b.count-a.count)[0];
+  if(close) add('Bir sonraki rütbeye en yakın: ', close.label, ' · ' + close.next.n + ' kitap daha, ' + close.next.label);
+  const extra = [];
+  if(extraTags) extra.push(extraTags + ' tema');
+  if(extraAuthors) extra.push(extraAuthors + ' yazar');
+  if(extra.length) document.getElementById('synapse-more').textContent = 'Okunaklı kalsın diye haritada yer almayan: ' + extra.join(', ');
+}
+
+/* Ağın ilk kitaptan bugüne nasıl örüldüğünü oynatır */
+function replaySynapses(){
+  if(!synState) return;
+  if(replayRAF){ cancelAnimationFrame(replayRAF); replayRAF = null; }
+  const {nodes, links} = synState;
+  const ordered = books.slice().sort((a,b)=>bookTime(a)-bookTime(b));
+  const total = ordered.length; if(!total) return;
+  const dur = Math.min(9000, 2500 + total*220);
+  const fmt = t=>new Date(t).toLocaleDateString('tr-TR', {month:'long', year:'numeric'});
+  const btn = document.getElementById('replay-btn');
+  btn.disabled = true;
+  const start = performance.now();
+  const step = now=>{
+    const p = Math.min(1, (now-start)/dur), cur = p*total;
+    nodes.forEach(n=>{ const o = Math.max(0, Math.min(1, cur - n.born)); n.g.style.opacity = o; if(n.lab) n.lab.style.opacity = o; });
+    links.forEach(l=>{ const o = Math.max(0, Math.min(1, cur - l.born)); l.p.style.opacity = o; });
+    const b = ordered[Math.min(total-1, Math.floor(cur))];
+    synapseNote(fmt(bookTime(b)) + ' · ' + b.title + (b.author ? ' — ' + b.author : ''));
+    if(p < 1) replayRAF = requestAnimationFrame(step);
+    else {
+      replayRAF = null; btn.disabled = false;
+      nodes.forEach(n=>{ n.g.style.opacity = ''; if(n.lab) n.lab.style.opacity = ''; });
+      links.forEach(l=>{ l.p.style.opacity = ''; });
+      setTimeout(()=>synapseNote(), 1800);
+    }
+  };
+  replayRAF = requestAnimationFrame(step);
+}
+
+/* ---------------- TEMALAR (afiş) ----------------
+   büyüklük = kaç kitap · renk = ne kadar yakın zamanda · yazı tipi = ağırlık sınıfı */
+const POSTER_COL = { br:[232,192,127], pa:[216,207,189], dim:[142,134,121], sl:[120,104,128], gr:[116,114,113] };
+function mixRGB(a,b,f){ return 'rgb(' + a.map((v,i)=>Math.round(v+(b[i]-v)*f)).join(',') + ')'; }
+function themeColor(count, months){
+  if(months > 8) return count >= 2 ? mixRGB(POSTER_COL.sl, POSTER_COL.sl, 0) : mixRGB(POSTER_COL.dim, POSTER_COL.gr, 0.5);
+  if(months <= 4) return mixRGB(POSTER_COL.br, POSTER_COL.pa, months/4);
+  return mixRGB(POSTER_COL.pa, POSTER_COL.dim, (months-4)/4);
+}
+function themeData(){
+  const idx = tagIndex();
+  const last = new Map();
+  books.forEach(b=>{
+    const t = b.status === 'okunuyor' ? Date.now() : bookTime(b);
+    (b.tags||[]).forEach(tag=>{ const k = tagKey(tag); last.set(k, Math.max(last.get(k)||0, t)); });
+  });
+  const list = [...idx.entries()].map(([k,e])=>{
+    const lt = last.get(k) || Date.now();
+    const months = Math.round(monthsAgo(lt));
+    return {key:k, label:e.label, count:e.count, last:lt, months, sleep: months > 8 && e.count >= 2};
+  }).sort((a,b)=>b.count-a.count || b.last-a.last);
+  const max = list.length ? list[0].count : 1;
+  const mainKeys = new Set(list.slice(0,6).filter(t=>t.count>=3).map(t=>t.key));
+  list.forEach(t=>{
+    t.f = Math.sqrt(t.count/max);
+    t.tier = mainKeys.has(t.key) ? 'main' : (t.count >= 2 ? 'mid' : 'one');
+    t.color = themeColor(t.count, t.months);
+  });
+  // büyüklerle küçükleri dönüşümlü diz: afiş dengeli dursun
+  const multi = list.filter(t=>t.tier!=='one');
+  const mixed = []; let lo = 0, hi = multi.length-1, flip = true;
+  while(lo <= hi){ mixed.push(flip ? multi[lo++] : multi[hi--]); flip = !flip; }
+  return {all:list, flow:mixed, ones:list.filter(t=>t.tier==='one')};
+}
+function themeDetail(t){
+  const m = new Date(t.last).toLocaleDateString('tr-TR',{month:'long', year:'numeric'});
+  return `${t.label} · ${t.count} kitap · son: ${m}` + (t.months <= 1 ? ' · şu an sıcak' : t.sleep ? ` · ${t.months} aydır uykuda` : '');
+}
+function renderTagPoster(){
+  const wrap = document.getElementById('tag-poster');
+  const det = document.getElementById('tag-poster-detail');
+  wrap.innerHTML = '';
+  const {all, flow, ones} = themeData();
+  const shareBtn = document.getElementById('poster-share-btn');
+  if(!all.length){
+    wrap.innerHTML = '<p style="color:var(--muted);font-size:13px;font-style:normal;font-family:var(--font-body);">Henüz tema yok. Kitap eklerken etiket gir.</p>';
+    det.textContent = ''; shareBtn.style.display = 'none';
+    return;
+  }
+  shareBtn.style.display = '';
+  const words = [];
+  const make = (t, parent)=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'w ' + t.tier;
+    b.textContent = t.label;
+    if(t.tier === 'main') b.style.fontSize = Math.round(28 + 20*t.f) + 'px';
+    else if(t.tier === 'mid') b.style.fontSize = Math.round(17 + 9*t.f) + 'px';
+    b.style.color = t.color;
+    if(t.sleep) b.style.opacity = '0.62';
+    b.addEventListener('mouseenter', ()=>{ words.forEach(o=>{ o.style.filter = o===b ? '' : 'brightness(.55)'; }); det.textContent = themeDetail(t); });
+    b.addEventListener('mouseleave', ()=>{ words.forEach(o=>{ o.style.filter = ''; }); det.textContent = ''; });
+    b.addEventListener('focus', ()=>{ det.textContent = themeDetail(t); });
+    b.onclick = ()=>{ switchTab('shelf'); document.getElementById('shelf-search').value = t.label; renderShelf(); window.scrollTo({top:0, behavior:'smooth'}); };
+    parent.append(b); words.push(b);
+  };
+  const flowEl = document.createElement('div'); flowEl.className = 'flow';
+  flow.slice(0,40).forEach(t=>make(t, flowEl));
+  wrap.append(flowEl);
+  if(ones.length){
+    const onesEl = document.createElement('div'); onesEl.className = 'ones';
+    ones.slice(0,40).forEach(t=>make(t, onesEl));
+    wrap.append(onesEl);
+  }
+  const hidden = Math.max(0, flow.length-40) + Math.max(0, ones.length-40);
+  if(hidden){ const m = document.createElement('span'); m.className = 'more'; m.textContent = '+' + hidden + ' tema daha · Etiketler sayfasında'; wrap.append(m); }
+  det.textContent = '';
+}
+
+/* ---- Afişi görsel olarak paylaş / indir ---- */
+async function drawPosterImage(){
+  const {flow, ones} = themeData();
+  const W = 1080, H = 1350, PADX = 92;
+  try{
+    await Promise.all([
+      document.fonts.load('600 80px Fraunces'), document.fonts.load('italic 400 40px Fraunces'),
+      document.fonts.load('400 22px "JetBrains Mono"')
+    ]);
+  }catch(e){}
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  // zemin
+  g.fillStyle = '#0d1016'; g.fillRect(0,0,W,H);
+  let rg = g.createRadialGradient(W*0.18, -H*0.05, 10, W*0.18, -H*0.05, W*0.9);
+  rg.addColorStop(0,'rgba(201,159,95,0.11)'); rg.addColorStop(1,'rgba(201,159,95,0)'); g.fillStyle = rg; g.fillRect(0,0,W,H);
+  rg = g.createRadialGradient(W, H*0.55, 10, W, H*0.55, W*0.8);
+  rg.addColorStop(0,'rgba(162,81,90,0.09)'); rg.addColorStop(1,'rgba(162,81,90,0)'); g.fillStyle = rg; g.fillRect(0,0,W,H);
+  const mono = px=>`400 ${px}px "JetBrains Mono", monospace`;
+  const spaced = (txt, x, y, px, spacing, align)=>{
+    g.font = mono(px);
+    const widths = [...txt].map(ch=>g.measureText(ch).width);
+    const total = widths.reduce((s,w)=>s+w,0) + spacing*(txt.length-1);
+    let cx = align === 'center' ? x - total/2 : align === 'right' ? x - total : x;
+    [...txt].forEach((ch,i)=>{ g.textAlign = 'left'; g.fillText(ch, cx, y); cx += widths[i] + spacing; });
+    return total;
+  };
+  // başlık
+  g.fillStyle = '#e8c07f'; spaced('YAŞAYAN KİTAPLIK · OKUR ATLASI', PADX, 128, 19, 4.2, 'left');
+  g.fillStyle = '#eae3d3'; g.font = 'italic 400 68px Fraunces, Georgia, serif'; g.textAlign = 'left'; g.fillText('Zihnimin temaları', PADX-3, 206);
+  g.strokeStyle = 'rgba(201,159,95,0.55)'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(PADX, 242); g.lineTo(PADX+120, 242); g.stroke();
+  const dateTxt = new Date().toLocaleDateString('tr-TR',{month:'long', year:'numeric'}).toLocaleUpperCase('tr');
+  g.fillStyle = '#6f7686'; spaced(dateTxt, W-PADX, 128, 17, 3, 'right');
+  // kelime akışı: sığmazsa ölçeği küçült
+  const top = 300, bottomLimit = H - 250;
+  const fontOf = (t, s)=> t.tier === 'main' ? `600 ${Math.round((50 + 40*t.f)*s)}px Fraunces, Georgia, serif`
+                        : t.tier === 'mid' ? `italic 400 ${Math.round((30 + 18*t.f)*s)}px Fraunces, Georgia, serif`
+                        : mono(Math.round(20*s));
+  const sizeOf = (t, s)=> t.tier === 'main' ? (50 + 40*t.f)*s : t.tier === 'mid' ? (30 + 18*t.f)*s : 20*s;
+  const layout = (items, s, gap, letter)=>{
+    const lines = []; let cur = [], cw = 0; const maxW = W - PADX*2;
+    items.forEach(t=>{
+      g.font = fontOf(t, s);
+      const label = t.tier === 'one' ? t.label.toLocaleUpperCase('tr') : t.label;
+      const w = g.measureText(label).width + (t.tier === 'one' ? letter*s*(label.length-1) : 0);
+      if(cur.length && cw + gap*s + w > maxW){ lines.push({items:cur, w:cw}); cur = []; cw = 0; }
+      cw += (cur.length ? gap*s : 0) + w; cur.push({t, w, label});
+    });
+    if(cur.length) lines.push({items:cur, w:cw});
+    lines.forEach(L=>{ L.h = Math.max(...L.items.map(it=>sizeOf(it.t, s))) * (L.items[0].t.tier === 'one' ? 2.1 : 1.16); });
+    return lines;
+  };
+  // az tema varsa büyüt, çok varsa sığana dek küçült
+  let s = 1.5, flowLines, oneLines, total;
+  for(let i=0;i<20;i++){
+    flowLines = layout(flow.slice(0,40), s, 26, 0);
+    oneLines = layout(ones.slice(0,40), s, 30, 3.5);
+    total = flowLines.reduce((a,L)=>a+L.h,0) + (oneLines.length ? 56*s + oneLines.reduce((a,L)=>a+L.h,0) : 0);
+    if(top + total <= bottomLimit) break;
+    s *= 0.92;
+  }
+  let y = top + Math.max(0, (bottomLimit - top - total) / 2);
+  const drawLine = (L, s, gap, letter)=>{
+    let x = W/2 - L.w/2;
+    const base = y + L.h*0.78;
+    L.items.forEach(it=>{
+      g.fillStyle = it.t.color;
+      g.globalAlpha = it.t.sleep ? 0.62 : 1;
+      if(it.t.tier === 'one'){ spaced(it.label, x, base, Math.round(20*s), 3.5*s, 'left'); }
+      else { g.font = fontOf(it.t, s); g.textAlign = 'left'; g.fillText(it.label, x, base); }
+      g.globalAlpha = 1;
+      x += it.w + gap*s;
+    });
+    y += L.h;
+  };
+  flowLines.forEach(L=>drawLine(L, s, 26, 0));
+  if(oneLines.length){
+    y += 22*s;
+    g.strokeStyle = '#2a3040'; g.setLineDash([6,8]); g.lineWidth = 1.5; g.beginPath(); g.moveTo(PADX, y); g.lineTo(W-PADX, y); g.stroke(); g.setLineDash([]);
+    y += 34*s;
+    oneLines.forEach(L=>drawLine(L, s, 30, 3.5));
+  }
+  // açıklama ve imza
+  const legY = H - 150;
+  const grad = g.createLinearGradient(PADX, 0, PADX+44, 0);
+  grad.addColorStop(0,'#e8c07f'); grad.addColorStop(0.5,'#d8cfbd'); grad.addColorStop(1,'#8e8679');
+  g.fillStyle = '#6f7686'; g.font = mono(17); g.textAlign = 'center';
+  g.fillText('büyüklük: kaç kitap   ·   renk: ne kadar yakın zamanda   ·   soluk: uykuda', W/2, legY);
+  g.strokeStyle = '#22262f'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(PADX, H-104); g.lineTo(W-PADX, H-104); g.stroke();
+  g.fillStyle = '#a49b87'; g.font = 'italic 400 26px Fraunces, Georgia, serif'; g.textAlign = 'left'; g.fillText('Yaşayan Kitaplık', PADX, H-62);
+  g.fillStyle = '#6f7686'; spaced('GAMZEGUCKIRAN.COM/LIVING-SHELF', W-PADX, H-64, 15, 2.6, 'right');
+  return new Promise(res=>c.toBlob(b=>res(b), 'image/png'));
+}
+async function sharePoster(){
+  const btn = document.getElementById('poster-share-btn');
+  const label = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Hazırlanıyor…';
+  try{
+    const blob = await drawPosterImage();
+    if(!blob) throw new Error('çizilemedi');
+    const name = 'zihnimin-temalari.png';
+    const file = new File([blob], name, {type:'image/png'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file], title:'Zihnimin temaları', text:'Yaşayan Kitaplık · gamzeguckiran.com/living-shelf.html'}); return; }
+      catch(e){ if(e && e.name === 'AbortError') return; }
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 4000);
+  }catch(e){
+    alert('Görsel hazırlanamadı: ' + e.message);
+  }finally{
+    btn.disabled = false; btn.textContent = label;
+  }
+}
+
+/* ---------------- OKUMA PUSULASI ---------------- */
+function renderCompass(){
+  const holder = document.getElementById('compass-holder');
+  const note = document.getElementById('compass-note');
+  holder.innerHTML = ''; note.textContent = '';
+  const list = books.filter(b=>b.status !== 'yarim' || true);
+  if(!list.length){ holder.innerHTML = '<div class="empty-state" style="padding:40px 20px;"><p style="color:var(--muted);font-size:13px;">Kitap ekledikçe pusula dolacak.</p></div>'; return; }
+  const W = 900, H = 420, m = {l:34, r:20, t:34, b:54};
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (tag, attrs, parent)=>{ const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+  const svg = document.createElementNS(NS,'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.style.width = '100%'; svg.style.height = 'auto'; holder.append(svg);
+  const X = v=>m.l + (W-m.l-m.r)*v/100, Y = v=>H-m.b - (H-m.t-m.b)*v/100;
+  mk('rect',{x:X(50), y:Y(100), width:X(100)-X(50), height:Y(50)-Y(100), fill:'#c99f5f', 'fill-opacity':0.03}, svg);
+  mk('line',{x1:X(0), y1:Y(50), x2:X(100), y2:Y(50), stroke:'#2a3040'}, svg);
+  mk('line',{x1:X(50), y1:Y(0), x2:X(50), y2:Y(100), stroke:'#2a3040'}, svg);
+  const q = (x,y,t,anchor)=>{ const e = mk('text',{x, y, 'text-anchor':anchor, 'font-family':'Fraunces, serif', 'font-style':'italic', 'font-size':14, fill:'#6f7686'}, svg); e.textContent = t; };
+  q(X(100), m.t-12, 'Hem sarstı hem genişletti', 'end');
+  q(X(0), m.t-12, 'Kalbe dokundu', 'start');
+  q(X(100), Y(0)+22, 'Ufku açtı', 'end');
+  q(X(0), Y(0)+22, 'Hafif geçti', 'start');
+  const ax = (x,y,t,rot)=>{ const e = mk('text',{x, y, 'text-anchor':'middle', 'font-family':'JetBrains Mono, monospace', 'font-size':9.5, fill:'#4c5363', transform: rot ? `rotate(-90 ${x} ${y})` : ''}, svg); e.textContent = t; };
+  ax(X(50), Y(0)+22, 'zihinsel genişleme →');
+  ax(14, Y(50), 'duygusal etki →', true);
+  const col = {okundu:'#e8c07f', okunuyor:'#9db898', yarim:'#c67078'};
+  const dots = list.map(b=>{
+    const seed = [...b.id].reduce((s,c)=>s+c.charCodeAt(0),0);
+    const jx = ((seed*37)%7-3)*0.5, jy = ((seed*53)%7-3)*0.5;
+    const c = mk('circle',{class:'compass-dot', cx:X(Math.max(1,Math.min(99,b.expansion+jx))), cy:Y(Math.max(1,Math.min(99,b.emotional+jy))), r: 4 + (b.action/100)*8,
+      fill: col[b.status] || col.okundu, 'fill-opacity':0.28, stroke: col[b.status] || col.okundu, 'stroke-width':1.2}, svg);
+    c.addEventListener('mouseenter', ()=>{
+      dots.forEach(d=>{ d.style.opacity = d===c ? 1 : 0.25; });
+      note.textContent = `${b.title}${b.author ? ' — '+b.author : ''} · genişleme ${b.expansion} · etki ${b.emotional} · eylem ${b.action}`;
+    });
+    c.addEventListener('mouseleave', ()=>{ dots.forEach(d=>{ d.style.opacity = ''; }); note.textContent = ''; });
+    c.addEventListener('click', ()=>openBookModal(b));
+    return c;
   });
 }
 
-/* ---- Zaman çizelgesi: aylara göre okuma yoğunluğu ---- */
+/* ---------------- ZAMAN İÇİNDE ---------------- */
 function renderTimeline(){
   const holder = document.getElementById('timeline-holder');
   holder.innerHTML='';
-  const withDates = books.filter(b=>b.dateAdded);
-  if(!withDates.length){
+  if(!books.length){
     holder.innerHTML = '<div class="empty-state" style="padding:40px 20px;"><p style="color:var(--muted);font-size:13px;">Zaman verisi için kitap eklemeye devam et.</p></div>';
     return;
   }
   const byMonth = {};
-  withDates.forEach(b=>{
-    const d = new Date(b.dateAdded);
+  books.forEach(b=>{
+    const d = new Date(bookTime(b));
     const key = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
     byMonth[key] = (byMonth[key]||0)+1;
   });
-  const keys = Object.keys(byMonth).sort();
-  const width = holder.clientWidth || 900;
-  const height = 160;
-  const margin = {top:10,right:10,bottom:24,left:24};
-
-  const svg = d3.select(holder).append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .attr('preserveAspectRatio','xMidYMid meet');
-
-  const x = d3.scaleBand().domain(keys).range([margin.left, width-margin.right]).padding(0.35);
-  const y = d3.scaleLinear().domain([0, d3.max(keys,k=>byMonth[k])]).nice().range([height-margin.bottom, margin.top]);
-
-  svg.append('g').selectAll('rect')
-    .data(keys).join('rect')
-    .attr('x', k=>x(k))
-    .attr('width', x.bandwidth())
-    .attr('y', k=>y(byMonth[k]))
-    .attr('height', k=>(height-margin.bottom)-y(byMonth[k]))
-    .attr('rx', 3)
-    .attr('fill', 'rgba(201,159,95,0.55)');
-
-  svg.append('g')
-    .attr('transform', `translate(0,${height-margin.bottom})`)
-    .call(d3.axisBottom(x).tickFormat(k=>k.slice(2)).tickSizeOuter(0))
+  // aradaki boş ayları da göster ki ara verdiğin dönemler görünsün
+  const keysRaw = Object.keys(byMonth).sort();
+  const keys = [];
+  let [y,m] = keysRaw[0].split('-').map(Number);
+  const [ey,em] = keysRaw[keysRaw.length-1].split('-').map(Number);
+  while(y < ey || (y === ey && m <= em)){ keys.push(y+'-'+String(m).padStart(2,'0')); m++; if(m>12){ m=1; y++; } if(keys.length > 240) break; }
+  const width = holder.clientWidth || 900, height = 170;
+  const margin = {top:10,right:10,bottom:26,left:26};
+  const svg = d3.select(holder).append('svg').attr('viewBox', `0 0 ${width} ${height}`).attr('preserveAspectRatio','xMidYMid meet');
+  const x = d3.scaleBand().domain(keys).range([margin.left, width-margin.right]).padding(0.3);
+  const y2 = d3.scaleLinear().domain([0, d3.max(keys,k=>byMonth[k]||0)]).nice().range([height-margin.bottom, margin.top]);
+  svg.append('g').selectAll('rect').data(keys).join('rect')
+    .attr('x', k=>x(k)).attr('width', x.bandwidth())
+    .attr('y', k=>y2(byMonth[k]||0)).attr('height', k=>(height-margin.bottom)-y2(byMonth[k]||0))
+    .attr('rx', 2).attr('fill', 'rgba(201,159,95,0.6)')
+    .append('title').text(k=>{ const [yy,mm] = k.split('-'); return new Date(+yy, +mm-1, 1).toLocaleDateString('tr-TR',{month:'long',year:'numeric'}) + ': ' + (byMonth[k]||0) + ' kitap'; });
+  const every = Math.ceil(keys.length/14);
+  svg.append('g').attr('transform', `translate(0,${height-margin.bottom})`)
+    .call(d3.axisBottom(x).tickValues(keys.filter((k,i)=>i%every===0)).tickFormat(k=>{ const [yy,mm] = k.split('-'); return new Date(+yy, +mm-1, 1).toLocaleDateString('tr-TR',{month:'short'}) + (mm==='01' || k===keys[0] ? ' ’'+yy.slice(2) : ''); }).tickSizeOuter(0))
     .call(g=>{ g.select('.domain').attr('stroke','#2a3040'); g.selectAll('text').attr('fill','#6f7686').attr('font-family','JetBrains Mono').attr('font-size',9); g.selectAll('line').attr('stroke','#2a3040'); });
-  svg.append('g')
-    .attr('transform', `translate(${margin.left},0)`)
-    .call(d3.axisLeft(y).ticks(4).tickSizeOuter(0))
+  svg.append('g').attr('transform', `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y2).ticks(4).tickFormat(d3.format('d')).tickSizeOuter(0))
     .call(g=>{ g.select('.domain').remove(); g.selectAll('text').attr('fill','#6f7686').attr('font-family','JetBrains Mono').attr('font-size',9); g.selectAll('line').attr('stroke','#2a3040'); });
+}
+
+/* ---------------- KALICI PROFİL ---------------- */
+function profiles(){ return Array.isArray(settings.profiles) ? settings.profiles : (settings.profiles = []); }
+function showProfile(i){
+  const p = profiles()[Number(i)||0]; if(!p) return;
+  document.getElementById('archetype-title').innerText = p.unvan || 'Profil';
+  const textEl = document.getElementById('archetype-text');
+  textEl.innerText = p.analiz || '';
+  textEl.style.color = '';
+  const wrap = document.getElementById('archetype-stats'); wrap.innerHTML = '';
+  (p.etiketler||[]).forEach(t=>{ const s = document.createElement('span'); s.className = 'tag-pill'; s.textContent = t; wrap.append(s); });
+  const d = document.createElement('span'); d.className = 'tag-pill'; d.style.borderStyle = 'dashed';
+  d.textContent = new Date(p.at).toLocaleDateString('tr-TR',{day:'numeric', month:'long', year:'numeric'}) + ' · ' + (p.books||'?') + ' kitapla';
+  wrap.append(d);
+}
+function renderProfileArea(){
+  const list = profiles();
+  const sel = document.getElementById('profile-history');
+  if(list.length > 1){
+    sel.innerHTML = '';
+    list.forEach((p,i)=>{ const o = document.createElement('option'); o.value = i; o.textContent = (i===0 ? 'Son: ' : '') + new Date(p.at).toLocaleDateString('tr-TR',{day:'numeric', month:'short', year:'numeric'}); sel.append(o); });
+    sel.style.display = '';
+  } else sel.style.display = 'none';
+  if(list.length && !renderProfileArea.shown){ showProfile(0); renderProfileArea.shown = true; }
 }
 
 /* =======================================================================
@@ -810,7 +1558,7 @@ ${bookList}`;
         'anthropic-dangerous-direct-browser-access':'true'
       },
       body: JSON.stringify({
-        model:'claude-sonnet-4-6',
+        model:'claude-sonnet-5-5',
         max_tokens:1000,
         messages:[{role:'user', content: prompt}]
       })
@@ -822,19 +1570,14 @@ ${bookList}`;
     const data = await response.json();
     const textBlock = (data.content||[]).find(c=>c.type==='text');
     let raw = textBlock ? textBlock.text : '';
-    raw = raw.trim().replace(/^```json/,'').replace(/^```/,'').replace(/```$/,'').trim();
-    const parsed = JSON.parse(raw);
+    const a = raw.indexOf('{'), z = raw.lastIndexOf('}');
+    if(a < 0 || z <= a) throw new Error('Yanıt beklenen biçimde gelmedi');
+    const parsed = JSON.parse(raw.slice(a, z+1));
 
-    titleEl.innerText = parsed.unvan || 'Profil';
-    textEl.innerText = parsed.analiz || '';
-    const statsWrap = document.getElementById('archetype-stats');
-    statsWrap.innerHTML='';
-    (parsed.etiketler||[]).forEach(t=>{
-      const pill = document.createElement('span');
-      pill.className='tag-pill';
-      pill.textContent = t;
-      statsWrap.appendChild(pill);
-    });
+    profiles().unshift({at: Date.now(), books: books.length, unvan: String(parsed.unvan||'Profil'), analiz: String(parsed.analiz||''), etiketler: (Array.isArray(parsed.etiketler) ? parsed.etiketler : []).map(String).slice(0,6)});
+    settings.profiles = profiles().slice(0,12);
+    saveSettingsToStorage();
+    renderProfileArea(); document.getElementById('profile-history').value = 0; showProfile(0);
   }catch(err){
     titleEl.innerText = 'Profil oluşturulamadı';
     textEl.innerText = 'Bir hata oluştu: '+err.message+'. API anahtarını ve internet bağlantını kontrol et.';
@@ -862,16 +1605,14 @@ async function fetchGoogleBooksData(){
       updateCoverPreview();
     }
     if(result.tags && result.tags.length){
-      const tagsInput = document.getElementById('book-tags');
-      const existing = tagsInput.value.split(',').map(t=>t.trim()).filter(Boolean);
-      const merged = Array.from(new Set([...existing, ...result.tags]));
-      tagsInput.value = merged.join(', ');
+      googleSuggest = result.tags.map(t=>String(t).split('/').pop().trim()).filter(Boolean);
+      renderTagExtras();
       if(!document.getElementById('book-category').value && result.tags[0]){
         document.getElementById('book-category').value = result.tags[0];
       }
     }
     if(result.description && !document.getElementById('book-description').value){
-      document.getElementById('book-description').value = result.description.replace(/<[^>]+>/g,'').slice(0,600);
+      document.getElementById('book-description').value = new DOMParser().parseFromString(result.description, 'text/html').body.textContent.replace(/\s+/g,' ').trim().slice(0,600);
     }
     statusEl.textContent = `Bulundu (${result.source}): ${result.title || title}${result.year ? ' · '+result.year : ''}`;
   }
@@ -907,7 +1648,8 @@ async function fetchGoogleBooksData(){
       if(author){
         const matched = pool.find(it=>{
           const authors = (it.volumeInfo.authors||[]).join(' ').toLowerCase();
-          return authors.includes(authorLower) || authorLower.includes(authors.split(' ')[0]||'');
+          const first = authors.split(' ')[0] || '';
+          return authors && (authors.includes(authorLower) || (first.length > 2 && authorLower.includes(first)));
         });
         if(matched) return matched;
       }
@@ -976,12 +1718,596 @@ async function fetchGoogleBooksData(){
 function updateCoverPreview(){
   const url = document.getElementById('book-cover').value.trim();
   const preview = document.getElementById('cover-preview');
-  if(url){
-    preview.innerHTML = `<img src="${escapeHtml(url)}" alt="">`;
+  if(url && /^https?:\/\//i.test(url)){
+    preview.innerHTML = `<img src="${escapeHtml(url)}" alt="" referrerpolicy="no-referrer">`;
+    const im = preview.querySelector('img');
+    im.addEventListener('error', ()=>{ preview.innerHTML = `<span style="color:var(--wine-2);font-size:9px;text-align:center;">Görsel açılmadı</span>`; }, { once:true });
   }else{
     preview.innerHTML = `<span style="color:var(--muted);font-size:9px;">Kapak</span>`;
   }
 }
+
+
+/* =======================================================================
+   ETİKETLER — tek kaynaktan, yazım hatasına dayanıklı
+   ======================================================================= */
+let formTags = [];
+let googleSuggest = [];
+let tiActive = -1;
+const tidy = t => { t = String(t||'').replace(/\s+/g,' ').trim(); return t ? t.charAt(0).toLocaleUpperCase('tr') + t.slice(1) : ''; };
+const tagKey = t => String(t||'').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr');
+// harf farkı ve Türkçe karakter farkı gözetmeyen anahtar: "Varoluşçuluk" = "varolusculuk"
+const foldKey = t => tagKey(t).replace(/ı/g,'i').normalize('NFD').replace(/[̀-ͯ]/g,'');
+function lev(a,b){
+  if(a===b) return 0;
+  const m=a.length, n=b.length; if(!m) return n; if(!n) return m;
+  let prev = Array.from({length:n+1},(_,j)=>j);
+  for(let i=1;i<=m;i++){
+    const cur=[i];
+    for(let j=1;j<=n;j++) cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a[i-1]===b[j-1]?0:1));
+    prev=cur;
+  }
+  return prev[n];
+}
+// tüm etiketler: anahtar -> en çok kullanılan yazılışı ve sayısı
+function tagIndex(){
+  const map = new Map();
+  books.forEach(b=>(b.tags||[]).forEach(t=>{
+    const k = tagKey(t); if(!k) return;
+    const e = map.get(k) || {count:0, forms:{}};
+    e.count++; e.forms[t] = (e.forms[t]||0)+1;
+    map.set(k, e);
+  }));
+  map.forEach(e=>{ e.label = Object.keys(e.forms).sort((a,b)=>e.forms[b]-e.forms[a])[0]; });
+  return map;
+}
+function canonicalTag(t){ const e = tagIndex().get(tagKey(t)); return e ? e.label : tidy(t); }
+function isSimilar(a,b){
+  const fa = foldKey(a), fb = foldKey(b);
+  if(fa===fb) return true;
+  const L = Math.min(fa.length, fb.length);
+  if(L < 4) return false;
+  return lev(fa,fb) <= (L <= 6 ? 1 : 2);
+}
+function similarTag(t, idx){
+  idx = idx || tagIndex();
+  const k = tagKey(t); let best = null;
+  idx.forEach((e,key)=>{
+    if(key===k || !isSimilar(t, e.label)) return;
+    if(!best || e.count > best.count) best = e;
+  });
+  return best;
+}
+function unifyTagCasing(){
+  const idx = tagIndex(); let changed = false;
+  books.forEach(b=>{
+    const seen = new Set(), out = [];
+    (b.tags||[]).forEach(t=>{ const k = tagKey(t); if(!k || seen.has(k)) { changed = true; return; } seen.add(k); const lab = idx.get(k).label; if(lab!==t) changed = true; out.push(lab); });
+    b.tags = out;
+  });
+  if(changed) saveToStorage();
+}
+// true: eklendi ya da zaten vardı; false: yazım hatası şüphesi var, kullanıcıya soruldu
+function addTag(raw, force){
+  const t = tidy(raw);
+  const field = document.getElementById('ti-field');
+  const hint = document.getElementById('ti-hint');
+  field.value = ''; hint.innerHTML = ''; closeSuggest();
+  if(!t) return true;
+  const k = tagKey(t);
+  if(formTags.some(x=>tagKey(x)===k)){ flashChip(k); return true; }
+  const idx = tagIndex();
+  if(idx.has(k)){ formTags.push(idx.get(k).label); renderTagInput(); return true; }
+  if(!force){
+    const sim = similarTag(t, idx);
+    if(sim){
+      hint.append('“'+t+'” yeni bir etiket olur. Bunu mu demek istedin?');
+      const yes = document.createElement('button'); yes.type='button'; yes.className='pick solid'; yes.textContent = sim.label + ' · ' + sim.count;
+      yes.onclick = ()=>{ addTag(sim.label); field.focus(); };
+      const no = document.createElement('button'); no.type='button'; no.className='pick'; no.textContent = '“'+t+'” olarak ekle';
+      no.onclick = ()=>{ addTag(t, true); field.focus(); };
+      hint.append(yes, no);
+      field.value = t;
+      return false;
+    }
+  }
+  formTags.push(t); renderTagInput(); return true;
+}
+function removeTag(k){ formTags = formTags.filter(x=>tagKey(x)!==k); renderTagInput(); }
+function flashChip(k){
+  const el = document.querySelector('#ti-chips .chip[data-k="'+CSS.escape(k)+'"]');
+  if(el){ el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
+}
+function renderTagInput(){
+  const box = document.getElementById('ti-chips');
+  box.innerHTML = '';
+  formTags.forEach(t=>{
+    const c = document.createElement('span'); c.className='chip'; c.dataset.k = tagKey(t);
+    c.append(t);
+    const x = document.createElement('button'); x.type='button'; x.title='Çıkar'; x.textContent='×';
+    x.onclick = e=>{ e.stopPropagation(); removeTag(tagKey(t)); };
+    c.append(x); box.append(c);
+  });
+  renderTagExtras();
+  renderDictRow();
+}
+function renderTagExtras(){
+  const has = k => formTags.some(x=>tagKey(x)===k);
+  const g = document.getElementById('ti-google'); g.innerHTML = '';
+  const gs = googleSuggest.filter(t=>!has(tagKey(canonicalTag(t))));
+  if(gs.length){
+    const l = document.createElement('span'); l.className='lbl'; l.textContent='Kaynaktan öneri'; g.append(l);
+    gs.forEach(t=>{ const b = document.createElement('button'); b.type='button'; b.className='pick g'; b.textContent='+ '+t; b.onclick=()=>addTag(t); g.append(b); });
+  }
+  const p = document.getElementById('ti-popular'); p.innerHTML = '';
+  const pop = [...tagIndex().values()].filter(e=>!has(tagKey(e.label))).sort((a,b)=>b.count-a.count).slice(0,10);
+  if(pop.length){
+    const l = document.createElement('span'); l.className='lbl'; l.textContent='Sık kullandıkların'; p.append(l);
+    pop.forEach(e=>{ const b = document.createElement('button'); b.type='button'; b.className='pick'; b.textContent=e.label; b.onclick=()=>addTag(e.label); p.append(b); });
+  }
+}
+function closeSuggest(){ const s = document.getElementById('ti-suggest'); s.hidden = true; s.innerHTML=''; tiActive = -1; }
+function openSuggest(){
+  const field = document.getElementById('ti-field');
+  const q = field.value.trim(); const box = document.getElementById('ti-suggest');
+  if(!q){ closeSuggest(); return; }
+  const fq = foldKey(q);
+  const list = [...tagIndex().values()]
+    .filter(e=>!formTags.some(x=>tagKey(x)===tagKey(e.label)) && foldKey(e.label).includes(fq))
+    .sort((a,b)=> (foldKey(b.label).startsWith(fq) - foldKey(a.label).startsWith(fq)) || b.count-a.count)
+    .slice(0,8);
+  if(tiActive === -1 && list.length) tiActive = 0;   // Enter en uygun öneriyi seçer
+  box.innerHTML = '';
+  list.forEach((e,i)=>{
+    const o = document.createElement('button'); o.type='button'; o.className='ti-opt'+(i===tiActive?' on':'');
+    const n = document.createElement('span'); n.textContent = e.label;
+    const c = document.createElement('small'); c.textContent = e.count + ' kitap';
+    o.append(n,c);
+    o.onmousedown = ev=>{ ev.preventDefault(); addTag(e.label); field.focus(); };
+    box.append(o);
+  });
+  if(!list.some(e=>tagKey(e.label)===tagKey(q))){
+    const o = document.createElement('button'); o.type='button'; o.className='ti-opt new'+(tiActive===list.length?' on':'');
+    o.textContent = '“'+tidy(q)+'” yeni etiket olarak ekle';
+    o.onmousedown = ev=>{ ev.preventDefault(); addTag(q); field.focus(); };
+    box.append(o);
+  }
+  box.hidden = false;
+}
+(function wireTagField(){
+  const field = document.getElementById('ti-field');
+  field.addEventListener('input', ()=>{
+    if(field.value.includes(',')){ const parts = field.value.split(','); field.value=''; parts.forEach(p=>addTag(p)); return; }
+    document.getElementById('ti-hint').innerHTML = '';
+    tiActive = -1; openSuggest();
+  });
+  field.addEventListener('keydown', e=>{
+    const box = document.getElementById('ti-suggest');
+    const opts = [...box.querySelectorAll('.ti-opt')];
+    if(e.key==='ArrowDown' && opts.length){ e.preventDefault(); tiActive = (tiActive+1) % opts.length; openSuggest(); }
+    else if(e.key==='ArrowUp' && opts.length){ e.preventDefault(); tiActive = (tiActive-1+opts.length) % opts.length; openSuggest(); }
+    else if(e.key==='Enter' || e.key==='Tab'){
+      if(e.key==='Tab' && !field.value.trim()) return;
+      e.preventDefault();
+      if(tiActive>=0 && opts[tiActive]) opts[tiActive].dispatchEvent(new MouseEvent('mousedown'));
+      else addTag(field.value);
+    }
+    else if(e.key==='Backspace' && !field.value && formTags.length){ formTags.pop(); renderTagInput(); }
+    else if(e.key==='Escape' && !box.hidden){ e.stopPropagation(); closeSuggest(); }
+  });
+  field.addEventListener('blur', ()=>setTimeout(closeSuggest, 120));
+})();
+
+/* ---- Etiket yönetimi ---- */
+function applyTagChange(fromKeys, toLabel){
+  const toKey = tagKey(toLabel);
+  books.forEach(b=>{
+    const out = [], seen = new Set();
+    (b.tags||[]).forEach(t=>{
+      let v = fromKeys.includes(tagKey(t)) ? toLabel : t;
+      if(v === null) return;
+      const k = tagKey(v); if(seen.has(k)) return; seen.add(k); out.push(v);
+    });
+    b.tags = out;
+  });
+  saveToStorage(); unifyTagCasing(); renderAllViews();
+}
+function removeTagEverywhere(key){
+  books.forEach(b=>{ b.tags = (b.tags||[]).filter(t=>tagKey(t)!==key); });
+  saveToStorage(); renderAllViews();
+}
+function ignoredPairs(){ return settings.tagIgnore || (settings.tagIgnore = []); }
+function openTagManager(){
+  let bg = document.getElementById('modal-tags');
+  if(!bg){
+    bg = document.createElement('div'); bg.id='modal-tags'; bg.className='modal-bg';
+    bg.innerHTML = '<div class="modal-box" style="max-width:600px;"><div class="modal-head"><h3 class="serif" style="margin:0;font-size:18px;">Etiketler</h3><button class="icon-btn" type="button">✕</button></div><div class="modal-body"><input type="search" id="tm-search" placeholder="Etiket ara" autocomplete="off" data-lpignore="true" data-1p-ignore="true" style="margin-bottom:14px;"><div id="tm-dupes"></div><div id="tm-list"></div></div></div>';
+    document.body.append(bg);
+    bg.querySelector('.icon-btn').onclick = ()=>{ bg.style.display='none'; };
+    bg.addEventListener('mousedown', e=>{ if(e.target===bg) bg.style.display='none'; });
+    document.getElementById('tm-search').addEventListener('input', drawTagManager);
+  }
+  document.getElementById('tm-search').value = '';
+  bg.style.display = 'flex';
+  drawTagManager();
+}
+function drawTagManager(){
+  const idx = tagIndex();
+  const all = [...idx.entries()].map(([k,e])=>({k, label:e.label, count:e.count}));
+  // olası yazım hataları: benzer çiftler, az kullanılan çok kullanılana katılır
+  const ign = ignoredPairs();
+  const pairs = [];
+  for(let i=0;i<all.length;i++) for(let j=i+1;j<all.length;j++){
+    const a = all[i], b = all[j];
+    if(!isSimilar(a.label, b.label)) continue;
+    const pid = [a.k,b.k].sort().join('|');
+    if(ign.includes(pid)) continue;
+    const [from,to] = a.count > b.count || (a.count===b.count && a.label.length>b.label.length) ? [b,a] : [a,b];
+    pairs.push({from,to,pid});
+  }
+  const dup = document.getElementById('tm-dupes'); dup.innerHTML='';
+  if(pairs.length){
+    dup.className='tm-dupes';
+    const h = document.createElement('div'); h.className='field-label'; h.style.marginBottom='4px'; h.textContent='Olası yazım hataları'; dup.append(h);
+    pairs.forEach(p=>{
+      const r = document.createElement('div'); r.className='row';
+      const s1 = document.createElement('s'); s1.textContent = p.from.label + ' (' + p.from.count + ')';
+      const b1 = document.createElement('b'); b1.textContent = p.to.label + ' (' + p.to.count + ')';
+      const go = document.createElement('button'); go.type='button'; go.className='btn small'; go.textContent='Birleştir';
+      go.onclick = ()=>{ applyTagChange([p.from.k], p.to.label); drawTagManager(); };
+      const sw = document.createElement('button'); sw.type='button'; sw.className='btn small ghost'; sw.textContent='⇄'; sw.title = 'Ters yönde birleştir: ' + p.to.label + ' → ' + p.from.label;
+      sw.onclick = ()=>{ applyTagChange([p.to.k], p.from.label); drawTagManager(); };
+      const no = document.createElement('button'); no.type='button'; no.className='btn small ghost'; no.textContent='Bunlar farklı';
+      no.onclick = ()=>{ ignoredPairs().push(p.pid); saveSettingsToStorage(); drawTagManager(); };
+      const pair = document.createElement('span'); pair.className='pair'; pair.append(s1, document.createTextNode('→'), b1);
+      const acts = document.createElement('span'); acts.className='acts'; acts.append(go, sw, no);
+      r.append(pair, acts); dup.append(r);
+    });
+  } else { dup.className=''; }
+
+  const q = foldKey(document.getElementById('tm-search').value);
+  const list = document.getElementById('tm-list'); list.innerHTML='';
+  const rows = all.filter(t=>!q || foldKey(t.label).includes(q)).sort((a,b)=>b.count-a.count || a.label.localeCompare(b.label,'tr'));
+  if(!rows.length){ list.innerHTML = '<p style="color:var(--muted);font-size:13.5px;">Henüz etiket yok.</p>'; return; }
+  rows.forEach(t=>{
+    const r = document.createElement('div'); r.className='tm-row';
+    const view = ()=>{
+      r.innerHTML='';
+      const nm = document.createElement('span'); nm.className='nm'; nm.textContent = t.label;
+      const ct = document.createElement('span'); ct.className='ct'; ct.textContent = t.count + ' kitap';
+      const ed = document.createElement('button'); ed.type='button'; ed.className='btn small ghost'; ed.textContent='Adlandır'; ed.onclick = edit;
+      const mg = document.createElement('select'); mg.style.cssText='width:auto;max-width:150px;padding:5px 8px;font-size:12px;';
+      mg.innerHTML = '<option value="">Birleştir…</option>';
+      all.filter(o=>o.k!==t.k).sort((a,b)=>a.label.localeCompare(b.label,'tr')).forEach(o=>{ const op=document.createElement('option'); op.value=o.label; op.textContent='→ '+o.label; mg.append(op); });
+      mg.onchange = ()=>{ if(!mg.value) return; if(confirm('“'+t.label+'” etiketi '+t.count+' kitapta “'+mg.value+'” olarak değişecek. Devam?')){ applyTagChange([t.k], mg.value); drawTagManager(); } else mg.value=''; };
+      const del = document.createElement('button'); del.type='button'; del.className='btn small ghost'; del.style.cssText='border-color:var(--wine);color:var(--wine-2);'; del.textContent='Sil';
+      del.onclick = ()=>{ if(confirm('“'+t.label+'” etiketi '+t.count+' kitaptan kaldırılacak. Kitaplar silinmez. Devam?')){ removeTagEverywhere(t.k); drawTagManager(); } };
+      r.append(nm, ct, ed, mg, del);
+    };
+    const edit = ()=>{
+      r.innerHTML='';
+      const inp = document.createElement('input'); inp.type='text'; inp.value=t.label; inp.setAttribute('autocomplete','off');
+      const ok = document.createElement('button'); ok.type='button'; ok.className='btn small primary'; ok.textContent='Kaydet';
+      const no = document.createElement('button'); no.type='button'; no.className='btn small ghost'; no.textContent='Vazgeç'; no.onclick=view;
+      const save = ()=>{
+        const v = tidy(inp.value); if(!v){ inp.focus(); return; }
+        const target = idx.get(tagKey(v));
+        if(target && tagKey(v)!==t.k && !confirm('“'+v+'” zaten var. İkisi birleşsin mi?')) return;
+        applyTagChange([t.k], target && tagKey(v)!==t.k ? target.label : v); drawTagManager();
+      };
+      ok.onclick = save;
+      inp.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); save(); } if(e.key==='Escape'){ e.stopPropagation(); view(); } });
+      r.append(inp, ok, no); inp.focus(); inp.select();
+    };
+    view(); list.append(r);
+  });
+}
+
+/* =======================================================================
+   TEMA SÖZLÜĞÜ — data/tema-sozlugu.csv
+   Başlık + yazar birlikte eşleşirse sözlükteki temalar önerilir.
+   Kullanıcının kendi etiketlerinin üzerine hiçbir zaman yazılmaz.
+   ======================================================================= */
+const DICT_URL = 'data/tema-sozlugu.csv';
+let dict = null;            // { entries:[], byKey: Map }
+let dictState = 'loading';  // loading | ok | none
+const titleKey = t => foldKey(String(t||'')).replace(/[’'`´]/g,'').replace(/\s*\(.*?\)\s*/g,' ').replace(/[^a-z0-9Ͱ-ϿЀ-ӿ぀-鿿가-힯 ]+/g,' ').replace(/\s+/g,' ').trim();
+const nameKey = n => foldKey(String(n||'')).replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();
+function loadDict(){
+  return fetch(DICT_URL, {cache:'no-cache'})
+    .then(r=>{ if(!r.ok) throw new Error(r.status); return r.text(); })
+    .then(text=>{
+      const rows = parseCSV(text);
+      const head = rows[0].map(h=>foldKey(h));
+      const col = n=>head.indexOf(n);
+      const ci = {t:col('baslik'), o:col('ozgun baslik'), a:col('yazar'), al:col('yazar diger yazilislar'), g:col('etiketler')};
+      if(ci.t<0 || ci.a<0 || ci.g<0) throw new Error('başlık satırı tanınmadı');
+      const entries = [], byKey = new Map();
+      const put = (k,e)=>{ if(!k) return; const l = byKey.get(k)||[]; if(!l.includes(e)) l.push(e); byKey.set(k,l); };
+      rows.slice(1).forEach(r=>{
+        const title = (r[ci.t]||'').trim(); if(!title) return;
+        const tags = (r[ci.g]||'').split(',').map(t=>t.trim()).filter(Boolean);
+        if(!tags.length) return;
+        const authorRaw = (r[ci.a]||'').trim();
+        const names = authorRaw.split(/[;,]/).concat(ci.al>=0 ? (r[ci.al]||'').split(/[;,]/) : []).map(nameKey).filter(Boolean);
+        const e = {title, author: authorRaw.split(/[;,]/)[0].trim(), authorRaw, names, tags,
+                   keys: [titleKey(title)].concat(ci.o>=0 && r[ci.o] ? [titleKey(r[ci.o])] : []).filter(Boolean)};
+        entries.push(e);
+        e.keys.forEach(k=>put(k,e));
+      });
+      dict = {entries, byKey}; dictState = 'ok';
+    })
+    .catch(()=>{ dict = null; dictState = 'none'; })
+    .finally(()=>{ renderDictSettings(); if(document.getElementById('modal-book').style.display==='flex') refreshDictSuggest(); });
+}
+// soyadı ya da tam ad tutuyorsa yazar aynı sayılır; Dostoyevski/Dostoevsky gibi yazılışlar sözlükteki "diğer yazılışlar"dan gelir
+function authorMatches(input, e){
+  const parts = String(input||'').split(/[;,&]| ve | and /i).map(nameKey).filter(Boolean);
+  if(!parts.length) return null;
+  return parts.some(p=>{
+    const ps = p.split(' '), sur = ps[ps.length-1];
+    return e.names.some(n=>{
+      if(n===p) return true;
+      const ns = n.split(' '), nsur = ns[ns.length-1];
+      if(sur.length>=3 && sur===nsur) return true;
+      if(sur.length>=6 && nsur.length>=6 && lev(sur,nsur)<=1) return true;
+      return ns.length===1 && ps.length===1 && n===p;
+    });
+  });
+}
+function titleCandidates(title){
+  if(!dict) return [];
+  const k = titleKey(title); if(!k) return [];
+  let c = dict.byKey.get(k);
+  if(c) return c.slice();
+  // "Kitap Adı: Alt başlık" ya da "Seri Adı 19: Bölüm" gibi yazılışlar
+  const base = titleKey(String(title).replace(/:.*/,''));
+  if(base && base!==k && dict.byKey.get(base)) return dict.byKey.get(base).slice();
+  const out = [];
+  dict.byKey.forEach((list,key)=>{
+    if(key.length>=6 && (k.startsWith(key+' ') || (base && base.startsWith(key+' ')))) list.forEach(e=>{ if(!out.includes(e)) out.push(e); });
+  });
+  return out;
+}
+// {entry} kesin eşleşme · {choices:[...]} yazar belirsiz · null bulunamadı
+function dictLookup(title, author){
+  const cands = titleCandidates(title);
+  if(!cands.length) return null;
+  if(String(author||'').trim()){
+    const hit = cands.filter(e=>authorMatches(author, e));
+    return hit.length ? {entry: hit[0]} : null;
+  }
+  const authors = [...new Set(cands.map(e=>nameKey(e.authorRaw)))];
+  return authors.length===1 ? {entry: cands[0]} : {choices: cands};
+}
+function dictTags(entry){ return entry.tags.map(canonicalTag); }
+
+let dictTimer = null;
+function scheduleDictSuggest(){ clearTimeout(dictTimer); dictTimer = setTimeout(refreshDictSuggest, 220); }
+let dictCurrent = null;
+function refreshDictSuggest(){
+  dictCurrent = dictLookup(document.getElementById('book-title').value, document.getElementById('book-author').value);
+  renderDictRow();
+}
+function renderDictRow(){
+  const box = document.getElementById('ti-dict'); if(!box) return;
+  box.innerHTML = '';
+  const r = dictCurrent; if(!r) return;
+  const lbl = t=>{ const l = document.createElement('span'); l.className='lbl'; l.textContent=t; box.append(l); };
+  if(r.choices){
+    lbl('Sözlükte bu adla birden çok kitap var');
+    r.choices.forEach(e=>{
+      const b = document.createElement('button'); b.type='button'; b.className='pick dict';
+      b.textContent = e.author;
+      b.onclick = ()=>{ document.getElementById('book-author').value = e.author; refreshDictSuggest(); };
+      box.append(b);
+    });
+    return;
+  }
+  const has = k => formTags.some(x=>tagKey(x)===k);
+  const tags = dictTags(r.entry).filter(t=>!has(tagKey(t)));
+  if(!tags.length) return;
+  lbl('Sözlükten');
+  if(tags.length>1){
+    const all = document.createElement('button'); all.type='button'; all.className='pick dict-all'; all.textContent='Hepsini ekle';
+    all.onclick = ()=>{ tags.forEach(t=>{ if(!has(tagKey(t))) formTags.push(t); }); renderTagInput(); };
+    box.append(all);
+  }
+  tags.forEach(t=>{ const b = document.createElement('button'); b.type='button'; b.className='pick dict'; b.textContent='+ '+t; b.onclick=()=>addTag(t); box.append(b); });
+}
+function untaggedDictMatches(){
+  if(!dict) return [];
+  return books.filter(b=>!(b.tags||[]).length).map(b=>{
+    const r = dictLookup(b.title, b.author);
+    return r && r.entry ? {book:b, entry:r.entry} : null;
+  }).filter(Boolean);
+}
+function renderDictSettings(){
+  const st = document.getElementById('dict-status'), btn = document.getElementById('dict-fill-btn');
+  if(!st) return;
+  if(dictState==='loading'){ st.textContent = 'Sözlük yükleniyor…'; btn.style.display='none'; return; }
+  if(dictState==='none'){ st.textContent = 'Sözlük bulunamadı. Etiket önerileri için tema-sozlugu.csv dosyası sitede data/ klasöründe olmalı.'; btn.style.display='none'; return; }
+  const m = untaggedDictMatches();
+  st.textContent = `${dict.entries.length} kitaplık sözlük yüklü. Kitap eklerken başlık ve yazar sözlükteki bir kitapla eşleşirse temaları önerilir.` +
+    (m.length ? ` Rafındaki etiketsiz kitaplardan ${m.length} tanesi sözlükte var.` : '');
+  btn.style.display = m.length ? '' : 'none';
+}
+function fillUntaggedFromDict(){
+  const m = untaggedDictMatches();
+  if(!m.length){ renderDictSettings(); return; }
+  if(!confirm(`${m.length} etiketsiz kitaba sözlükteki temalar eklenecek. Etiketi olan kitaplara dokunulmaz. Devam edilsin mi?`)) return;
+  m.forEach(({book,entry})=>{ book.tags = dictTags(entry); });
+  saveToStorage(); unifyTagCasing(); renderAllViews(); renderDictSettings();
+  alert(m.length + ' kitap etiketlendi.');
+}
+
+/* =======================================================================
+   GOODREADS'TEN İÇE AKTARMA
+   Goodreads › Kitaplarım › Import and export › Export Library ile alınan CSV
+   ======================================================================= */
+function parseCSV(text){
+  text = text.replace(/^﻿/, '');
+  const rows = []; let row = [], field = '', q = false;
+  for(let i=0;i<text.length;i++){
+    const c = text[i];
+    if(q){
+      if(c === '"'){ if(text[i+1] === '"'){ field += '"'; i++; } else q = false; }
+      else field += c;
+    }else{
+      if(c === '"') q = true;
+      else if(c === ','){ row.push(field); field = ''; }
+      else if(c === '\n' || c === '\r'){
+        if(c === '\r' && text[i+1] === '\n') i++;
+        row.push(field); field = '';
+        if(row.length > 1 || row[0] !== '') rows.push(row);
+        row = [];
+      }else field += c;
+    }
+  }
+  if(field !== '' || row.length){ row.push(field); rows.push(row); }
+  return rows;
+}
+const GR_BUILTIN = new Set(['read','currently-reading','to-read']);
+const GR_DNF = /^(dnf|did-not-finish|didnt-finish|abandoned|unfinished|yarım|yarim|yarida-biraktim)$/i;
+function grDate(s){
+  const m = String(s||'').trim().match(/^(\d{4})[\/\-.](\d{1,2})(?:[\/\-.](\d{1,2}))?/);
+  if(!m) return null;
+  return {y:+m[1], m:+m[2], d:+(m[3]||15)};
+}
+function grClean(s){ return String(s||'').replace(/^="?|"$/g,'').trim(); }
+function grReview(s){
+  s = String(s||'').trim(); if(!s) return '';
+  const doc = new DOMParser().parseFromString(s.replace(/<br\s*\/?>/gi,'\n'), 'text/html');
+  return (doc.body.textContent || '').replace(/\n{3,}/g,'\n\n').trim();
+}
+const bookKey = (title, author)=>
+  (String(title).replace(/\s*\(.*?\)\s*/g,' ').replace(/:.*$/,'') + '|' + String(author).split(/\s+/).pop())
+    .toLocaleLowerCase('tr').replace(/ı/g,'i').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9|]+/g,'');
+
+function startGoodreadsImport(){
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = '.csv,text/csv'; inp.style.display = 'none';
+  inp.onchange = ()=>{
+    const f = inp.files[0]; inp.remove(); if(!f) return;
+    const r = new FileReader();
+    r.onload = ev=>{
+      try{ previewGoodreads(String(ev.target.result)); }
+      catch(e){ alert('Bu dosya okunamadı: ' + e.message); }
+    };
+    r.readAsText(f, 'utf-8');
+  };
+  document.body.appendChild(inp); inp.click();
+}
+
+let grPending = null;
+function previewGoodreads(text){
+  const rows = parseCSV(text);
+  if(rows.length < 2) throw new Error('dosyada kitap yok');
+  const head = rows[0].map(h=>h.trim().toLowerCase());
+  const col = name=>head.indexOf(name);
+  const need = ['title','author','exclusive shelf'];
+  if(need.some(n=>col(n) < 0)) throw new Error('Bu bir Goodreads dışa aktarma dosyası değil gibi. Goodreads › My Books › Import and export › Export Library ile alınan .csv dosyasını seçmelisin.');
+  const get = (r,n)=>{ const i = col(n); return i >= 0 ? (r[i]||'') : ''; };
+  const existing = new Set(books.map(b=>bookKey(b.title, b.author)));
+  const seen = new Set();
+  const items = [], shelfCount = {};
+  let toRead = 0, dupes = 0;
+  rows.slice(1).forEach(r=>{
+    const title = get(r,'title').trim(); if(!title) return;
+    const author = get(r,'author').trim();
+    const ex = get(r,'exclusive shelf').trim().toLowerCase();
+    const shelves = get(r,'bookshelves').split(',').map(s=>s.trim()).filter(Boolean);
+    const dnf = shelves.some(s=>GR_DNF.test(s)) || GR_DNF.test(ex);
+    let status = null;
+    if(dnf) status = 'yarim';
+    else if(ex === 'read') status = 'okundu';
+    else if(ex === 'currently-reading') status = 'okunuyor';
+    else if(ex === 'to-read'){ toRead++; return; }
+    else status = 'okundu';
+    const k = bookKey(title, author);
+    if(existing.has(k) || seen.has(k)){ dupes++; return; }
+    seen.add(k);
+    const custom = shelves.filter(s=>!GR_BUILTIN.has(s.toLowerCase()) && !GR_DNF.test(s));
+    custom.forEach(s=>{ shelfCount[s] = (shelfCount[s]||0)+1; });
+    const dm = dictLookup(title, author);
+    items.push({title, author, status, custom, dict: dm && dm.entry ? dm.entry : null,
+      isbn: grClean(get(r,'isbn13')) || grClean(get(r,'isbn')),
+      rating: parseInt(get(r,'my rating'),10) || 0,
+      read: grDate(get(r,'date read')), added: grDate(get(r,'date added')),
+      publisher: get(r,'publisher').trim(), review: grReview(get(r,'my review'))});
+  });
+  grPending = {items, chosen: new Set(), useDict: true};
+  const shelves = Object.entries(shelfCount).sort((a,b)=>b[1]-a[1]);
+  const box = document.getElementById('gr-body');
+  box.innerHTML = '';
+  const p = (html)=>{ const e = document.createElement('p'); e.style.cssText = 'font-size:14px;line-height:1.7;color:var(--parchment-dim);margin:0 0 12px;'; e.innerHTML = html; box.append(e); return e; };
+  const n = s=>items.filter(i=>i.status===s).length;
+  if(!items.length){
+    p('Rafa eklenecek yeni kitap bulunamadı.' + (dupes ? ` <b>${dupes}</b> kitap zaten rafında.` : '') + (toRead ? ` <b>${toRead}</b> kitap "okunacaklar" rafında olduğu için alınmadı.` : ''));
+    document.getElementById('gr-go').style.display = 'none';
+  }else{
+    document.getElementById('gr-go').style.display = '';
+    p(`<b style="color:var(--brass-2)">${items.length}</b> kitap rafına eklenecek: ${n('okundu')} okundu, ${n('okunuyor')} okunuyor, ${n('yarim')} yarım bırakıldı.`);
+    const notes = [];
+    if(dupes) notes.push(`${dupes} kitap zaten rafında olduğu için atlanacak.`);
+    if(toRead) notes.push(`"Okunacaklar" rafındaki ${toRead} kitap alınmayacak; Yaşayan Kitaplık okuduklarının haritası.`);
+    if(notes.length) p(notes.join(' '));
+    if(shelves.length){
+      p('Goodreads\'te kendi açtığın raflar var. Hangilerini <b>etiket</b> olarak almak istersin? Tema haritası etiketlerle çalıştığı için yalnızca konu bildirenleri (ör. "felsefe", "distopya") seçmeni öneririm; "2023", "sahip-olduklarım" gibi rafları seçme.');
+      const wrap = document.createElement('div'); wrap.className = 'ti-row'; wrap.style.marginBottom = '14px';
+      shelves.slice(0,60).forEach(([s,c])=>{
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'pick';
+        b.textContent = s + ' · ' + c;
+        b.onclick = ()=>{
+          if(grPending.chosen.has(s)){ grPending.chosen.delete(s); b.classList.remove('solid'); }
+          else { grPending.chosen.add(s); b.classList.add('solid'); }
+        };
+        wrap.append(b);
+      });
+      box.append(wrap);
+    }
+    const dn = items.filter(i=>i.dict).length;
+    if(dn){
+      const e = p(`<b style="color:var(--brass-2)">${dn}</b> kitap tema sözlüğünde bulundu. `);
+      const b = document.createElement('button'); b.type='button'; b.className='pick solid';
+      const lab = ()=>{ b.textContent = grPending.useDict ? '✓ Temaları sözlükten ekle' : 'Temaları sözlükten ekle'; b.classList.toggle('solid', grPending.useDict); };
+      b.onclick = ()=>{ grPending.useDict = !grPending.useDict; lab(); }; lab();
+      e.append(b);
+      const n2 = document.createElement('span'); n2.style.cssText='display:block;font-size:12.5px;color:var(--muted);margin-top:6px;';
+      n2.textContent = 'Seçtiğin Goodreads raflarından etiket alan kitaplara sözlük karışmaz; yalnızca etiketsiz gelecek kitaplar sözlükten tamamlanır.';
+      e.append(n2);
+    }
+    p('<span style="font-size:12.5px;color:var(--muted)">Kapaklar Open Library\'den ISBN ile çekilir. Okuma pusulasındaki puanlar Goodreads yıldızından tahmin edilir; kitabı açıp düzeltebilirsin. Goodreads incelemen kitabın açıklamasına eklenir. Okuma tarihi olmayan kitaplar Goodreads\'e eklediğin aya sayılır.</span>');
+  }
+  closeSettingsModal();
+  document.getElementById('modal-goodreads').style.display = 'flex';
+}
+function commitGoodreads(){
+  if(!grPending || !grPending.items.length) return;
+  const pad = n=>String(n).padStart(2,'0');
+  const made = grPending.items.map(it=>{
+    let tags = it.custom.filter(s=>grPending.chosen.has(s)).map(s=>tidy(s.replace(/[-_]+/g,' ')));
+    if(!tags.length && grPending.useDict && it.dict) tags = dictTags(it.dict);
+    const est = it.rating ? 20 + it.rating*15 : null;   // 1 yıldız → 35, 5 yıldız → 95
+    const addedT = it.added ? new Date(it.added.y, it.added.m-1, it.added.d).getTime() : Date.now();
+    return normalizeBook({
+      id: newId(), title: it.title, author: it.author, category: '', status: it.status,
+      cover: it.isbn && /^\d{10}(\d{3})?$/.test(it.isbn) ? `https://covers.openlibrary.org/b/isbn/${it.isbn}-M.jpg?default=false` : '',
+      tags, expansion: est ?? 60, emotional: est ?? 60, action: est ? Math.max(20, est-20) : 45,
+      quote: '', description: it.review ? 'Goodreads incelemem: ' + it.review : '',
+      readDate: it.read ? `${it.read.y}-${pad(it.read.m)}` : '',
+      dateAdded: addedT
+    });
+  }).filter(Boolean);
+  books = books.concat(made);
+  saveToStorage(); unifyTagCasing();
+  closeGoodreadsModal(); closeSettingsModal();
+  renderAllViews();
+  switchTab('shelf');
+  alert(made.length + ' kitap rafına eklendi.' + (made.some(b=>!b.tags.length) ? ' Etiketi olmayan kitapları "Etiketsiz" süzgeciyle bulup tema ekleyebilirsin; harita etiket ekledikçe dolacak.' : ''));
+  grPending = null;
+}
+function closeGoodreadsModal(){ document.getElementById('modal-goodreads').style.display = 'none'; }
 
 /* =======================================================================
    KİTAP MODALI — ekleme / düzenleme / silme
@@ -993,6 +2319,13 @@ function openBookModal(bookToEdit=null){
   document.getElementById('val-expansion').innerText='75';
   document.getElementById('val-emotional').innerText='80';
   document.getElementById('val-action').innerText='60';
+  formTags = bookToEdit ? (bookToEdit.tags||[]).map(canonicalTag) : [];
+  formTags = formTags.filter((t,i)=>formTags.findIndex(x=>tagKey(x)===tagKey(t))===i);
+  googleSuggest = [];
+  document.getElementById('ti-field').value = '';
+  document.getElementById('ti-hint').innerHTML = '';
+  renderTagInput();
+  dictCurrent = null; renderDictRow();
 
   if(bookToEdit){
     document.getElementById('book-delete-btn').style.display='inline-flex';
@@ -1003,7 +2336,6 @@ function openBookModal(bookToEdit=null){
     document.getElementById('book-category').value = bookToEdit.category || '';
     document.getElementById('book-status').value = bookToEdit.status || 'okundu';
     document.getElementById('book-cover').value = bookToEdit.cover || '';
-    document.getElementById('book-tags').value = (bookToEdit.tags||[]).join(', ');
     document.getElementById('book-expansion').value = bookToEdit.expansion ?? 75;
     document.getElementById('val-expansion').innerText = bookToEdit.expansion ?? 75;
     document.getElementById('book-emotional').value = bookToEdit.emotional ?? 80;
@@ -1012,21 +2344,30 @@ function openBookModal(bookToEdit=null){
     document.getElementById('val-action').innerText = bookToEdit.action ?? 60;
     document.getElementById('book-quote').value = bookToEdit.quote || '';
     document.getElementById('book-description').value = bookToEdit.description || '';
+    document.getElementById('book-readdate').value = bookToEdit.readDate || '';
     updateCoverPreview();
   }else{
     document.getElementById('book-delete-btn').style.display='none';
     document.getElementById('modal-book-title').innerText='Kitap Ekle';
     document.getElementById('book-id').value='';
+    const now = new Date();
+    document.getElementById('book-readdate').value = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0');
   }
   document.getElementById('modal-book').style.display='flex';
+  refreshDictSuggest();
 }
 function closeBookModal(){
   document.getElementById('modal-book').style.display='none';
 }
 function saveBook(e){
   e.preventDefault();
-  const id = document.getElementById('book-id').value || ('b_'+Date.now()+'_'+Math.random().toString(36).slice(2,7));
-  const tags = document.getElementById('book-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const id = document.getElementById('book-id').value || newId();
+  // kutuda yazılı kalmış etiket varsa onu da al; yazım hatası şüphesi varsa önce sor
+  const pending = document.getElementById('ti-field').value;
+  if(pending.trim()){
+    if(!addTag(pending)){ document.getElementById('ti-field').focus(); return; }
+  }
+  const tags = formTags.slice();
   const existingIdx = books.findIndex(b=>b.id===id);
   const bookData = {
     id,
@@ -1034,13 +2375,14 @@ function saveBook(e){
     author: document.getElementById('book-author').value.trim(),
     category: document.getElementById('book-category').value.trim(),
     status: document.getElementById('book-status').value,
-    cover: document.getElementById('book-cover').value.trim(),
+    cover: /^https?:\/\//i.test(document.getElementById('book-cover').value.trim()) ? document.getElementById('book-cover').value.trim() : '',
     tags,
     expansion: Number(document.getElementById('book-expansion').value),
     emotional: Number(document.getElementById('book-emotional').value),
     action: Number(document.getElementById('book-action').value),
     quote: document.getElementById('book-quote').value.trim(),
     description: document.getElementById('book-description').value.trim(),
+    readDate: /^\d{4}-(0[1-9]|1[0-2])$/.test(document.getElementById('book-readdate').value) ? document.getElementById('book-readdate').value : '',
     dateAdded: existingIdx>-1 ? books[existingIdx].dateAdded : Date.now()
   };
   if(existingIdx>-1) books[existingIdx] = bookData;
@@ -1063,10 +2405,17 @@ function deleteBookById(id){
 function openSettingsModal(){
   document.getElementById('anthropic-key-input').value = settings.anthropicKey || '';
   document.getElementById('google-key-input').value = settings.googleBooksKey || '';
+  renderDictSettings();
   document.getElementById('modal-settings').style.display='flex';
 }
 function closeSettingsModal(){
   document.getElementById('modal-settings').style.display='none';
+}
+function openAboutModal(){
+  document.getElementById('modal-about').style.display='flex';
+}
+function closeAboutModal(){
+  document.getElementById('modal-about').style.display='none';
 }
 function saveSettings(){
   settings.anthropicKey = document.getElementById('anthropic-key-input').value.trim();
@@ -1082,24 +2431,31 @@ function exportJSON(){
   const blob = new Blob([JSON.stringify(books, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
+  const d = new Date();
   a.href = url;
-  a.download = 'yasayan-kitaplik-yedek.json';
+  a.download = 'yasayan-kitaplik-yedek-' + d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0') + '.json';
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(url);
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 4000);
 }
 function importJSON(e){
   const file = e.target.files[0];
+  e.target.value = '';   // aynı dosya yeniden seçilebilsin
   if(!file) return;
   const reader = new FileReader();
   reader.onload = (ev)=>{
     try{
       const imported = JSON.parse(ev.target.result);
       if(!Array.isArray(imported)) throw new Error('Geçersiz format');
-      books = imported;
+      const clean = normalizeList(imported);
+      if(!clean.length) throw new Error('Dosyada kitap bulunamadı');
+      if(books.length && !confirm('Raftaki ' + books.length + ' kitabın yerine yedekteki ' + clean.length + ' kitap gelecek. Devam edilsin mi?')) return;
+      books = clean;
       saveToStorage();
       renderAllViews();
       closeSettingsModal();
-      alert('İçe aktarma tamamlandı.');
+      alert(clean.length + ' kitap içe aktarıldı.');
     }catch(err){
       alert('İçe aktarma başarısız: '+err.message);
     }
@@ -1109,12 +2465,12 @@ function importJSON(e){
 function loadSampleData(){
   if(books.length && !confirm('Mevcut veriler örnek verilerle birlikte kalacak. Devam edilsin mi?')) return;
   const sample = [
-    {id:'s1', title:'Suç ve Ceza', author:'Fyodor Dostoyevski', category:'Klasik', status:'okundu', cover:'', tags:['Vicdan','Psikoloji','Ahlak'], expansion:90, emotional:95, action:60, quote:'', description:'', dateAdded: Date.now()-1000*60*60*24*200},
-    {id:'s2', title:'Karamazov Kardeşler', author:'Fyodor Dostoyevski', category:'Klasik', status:'okundu', cover:'', tags:['İnanç','Aile','Ahlak'], expansion:92, emotional:90, action:55, quote:'', description:'', dateAdded: Date.now()-1000*60*60*24*160},
-    {id:'s3', title:'Sapiens', author:'Yuval Noah Harari', category:'Tarih', status:'okundu', cover:'', tags:['İnsanlık Tarihi','Antropoloji'], expansion:85, emotional:40, action:50, quote:'', description:'', dateAdded: Date.now()-1000*60*60*24*100},
-    {id:'s4', title:'Simyacı', author:'Paulo Coelho', category:'Roman', status:'okundu', cover:'', tags:['Kader','Yolculuk'], expansion:50, emotional:70, action:75, quote:'', description:'', dateAdded: Date.now()-1000*60*60*24*40},
+    {id:'s1', title:'Suç ve Ceza', author:'Fyodor Dostoyevski', category:'Klasik', status:'okundu', cover:'', tags:['Vicdan','Psikoloji','Ahlak'], expansion:90, emotional:95, action:60, quote:'', description:'', readDate:'2025-11', dateAdded: Date.now()-1000*60*60*24*200},
+    {id:'s2', title:'Karamazov Kardeşler', author:'Fyodor Dostoyevski', category:'Klasik', status:'okundu', cover:'', tags:['İnanç','Aile','Ahlak'], expansion:92, emotional:90, action:55, quote:'', description:'', readDate:'2026-01', dateAdded: Date.now()-1000*60*60*24*160},
+    {id:'s3', title:'Sapiens', author:'Yuval Noah Harari', category:'Tarih', status:'okundu', cover:'', tags:['İnsanlık Tarihi','Antropoloji'], expansion:85, emotional:40, action:50, quote:'', description:'', readDate:'2026-05', dateAdded: Date.now()-1000*60*60*24*100},
+    {id:'s4', title:'Simyacı', author:'Paulo Coelho', category:'Roman', status:'okundu', cover:'', tags:['Kader','Yolculuk'], expansion:50, emotional:70, action:75, quote:'', description:'', readDate:'2026-10', dateAdded: Date.now()-1000*60*60*24*40},
   ];
-  books = books.concat(sample);
+  books = books.concat(normalizeList(sample.map(b=>Object.assign(b, { id: newId() }))));
   saveToStorage();
   renderAllViews();
 }
@@ -1131,8 +2487,25 @@ function clearAllData(){
    ======================================================================= */
 loadBooksFromStorage();
 loadSettings();
+unifyTagCasing();
 renderAllViews();
-window.addEventListener('resize', ()=>{ if(document.getElementById('view-impact').classList.contains('active')) renderImpactView(); });
+['book-title','book-author'].forEach(id=>document.getElementById(id).addEventListener('input', scheduleDictSuggest));
+loadDict();
+let resizeTimer = null;
+window.addEventListener('resize', ()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(()=>{ if(document.getElementById('view-impact').classList.contains('active')) renderImpactView(); }, 200);
+});
+document.addEventListener('keydown', e=>{
+  if(e.key !== 'Escape') return;
+  // Kitap penceresi bilerek kapatılmaz: yazılan alıntı yanlışlıkla kaybolmasın
+  closeSettingsModal(); closeAboutModal(); closeGoodreadsModal();
+  const tm = document.getElementById('modal-tags'); if(tm) tm.style.display='none';
+});
+['modal-settings','modal-about'].forEach(id=>{
+  const bg = document.getElementById(id);
+  bg.addEventListener('mousedown', e=>{ if(e.target === bg) bg.style.display = 'none'; });
+});
 </script>
 </body>
 </html>
